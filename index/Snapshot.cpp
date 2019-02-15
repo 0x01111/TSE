@@ -1,4 +1,4 @@
-#include <stdio.h>
+ï»¿#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <sys/types.h>
@@ -186,10 +186,10 @@ cout << "<TABLE cellSpacing=0 cellPadding=10 width=100% bgColor=#ffffff border=1
   << "<TBODY>"
   <<   "<TR>"
   <<     "<TD><FONT color=black size = 2>"
-  <<	 "ÕâÊÇ</font>"
-  <<     "<a href=http://162.105.80.60/yc/TSE/><B><FONT color=#0039b6 size = 2>TSEËÑË÷</a></FONT></B>"
-  <<     "<FONT color=black size = 2>Ìá¹©µÄÍøÒ³¿ìÕÕ</FONT>"
-  <<     "<br><font size=2>ÄúµÄ²éÑ¯´Ê¶¼ÒÑ±êÃ÷ÈçÏÂ£º";
+  <<	 "è¿™æ˜¯</font>"
+  <<     "<a href=http://162.105.80.60/yc/TSE/><B><FONT color=#0039b6 size = 2>TSEæœç´¢</a></FONT></B>"
+  <<     "<FONT color=black size = 2>æä¾›çš„ç½‘é¡µå¿«ç…§</FONT>"
+  <<     "<br><font size=2>æ‚¨çš„æŸ¥è¯¢è¯éƒ½å·²æ ‡æ˜å¦‚ä¸‹ï¼š";
 
 		for (unsigned int i=0; i<vecQuery.size(); i++){
 			if (i%2 == 0 ){
@@ -202,9 +202,9 @@ cout << "<TABLE cellSpacing=0 cellPadding=10 width=100% bgColor=#ffffff border=1
 				<< ">" << vecQuery[i] << "</a>&nbsp;</B>";
 		}
 
-cout << " (µã»÷²éÑ¯´Ê£¬¿ÉÒÔÌøµ½ËüÔÚÎÄÖĞÊ×´Î³öÏÖµÄÎ»ÖÃ)" << endl;
-cout <<     "<br><font color=gray size = 2>(TSEºÍÍøÒ³<a href=\"" << HtmlInputs[1].Value << "\">"
-  <<	 "<font color=blue>" << HtmlInputs[1].Value << "</font></a>µÄ×÷ÕßÎŞ¹Ø£¬²»¶ÔÆäÄÚÈİ¸ºÔğ¡£)"
+cout << " (ç‚¹å‡»æŸ¥è¯¢è¯ï¼Œå¯ä»¥è·³åˆ°å®ƒåœ¨æ–‡ä¸­é¦–æ¬¡å‡ºç°çš„ä½ç½®)" << endl;
+cout <<     "<br><font color=gray size = 2>(TSEå’Œç½‘é¡µ<a href=\"" << HtmlInputs[1].Value << "\">"
+  <<	 "<font color=blue>" << HtmlInputs[1].Value << "</font></a>çš„ä½œè€…æ— å…³ï¼Œä¸å¯¹å…¶å†…å®¹è´Ÿè´£ã€‚)"
   <<	 "</font></font></td></tr></table>"
   <<     "<BR>"
   <<     "</TD>"
@@ -325,7 +325,7 @@ int GetInputs()
         return 0;
 }
 
-//½«×Ö·û´®SourceStrÖĞÓÃÊ®Áù½øÖÆÊı±íÊ¾µÄAscii Âë×ª»»³ÉÕı³£×Ö·û^M
+//å°†å­—ç¬¦ä¸²SourceSträ¸­ç”¨åå…­è¿›åˆ¶æ•°è¡¨ç¤ºçš„Ascii ç è½¬æ¢æˆæ­£å¸¸å­—ç¬¦^M
 void Translate(char* SourceStr)   
 {
 	int i=0;
@@ -368,14 +368,14 @@ void Translate(char* SourceStr)
 /*
 int PrintResults()
 {
-        printf("<title>Ìá½»³É¹¦</title>\n");
+        printf("<title>æäº¤æˆåŠŸ</title>\n");
 	printf("<meta http-equiv=\"refresh\" content=\"5;url=http://e.pku.edu.cn/\">\n");
         printf("<center>\n");
-	printf("Ìá½»³É¹¦!<br><br>\n");
-	printf("Ğ»Ğ»ÄúµÄÖ§³Ö<br><br>\n");
-	printf("×¢Òâ: ÊÕÂ¼¹ı³Ì²»º¬ÈË¹¤¸ÉÔ¤£¬ÌìÍø²»±£Ö¤ÊÕÂ¼ÄúÌá½»µÄÍøÕ¾¡£<br><br>\n");
-	printf("±¾Ò³ 5 Ãëºó×Ô¶¯×ªµ½ Ïà¹ØÍøÒ³ ......<br><br>\n");
-	printf("&copy 2003 ±±´óÍøÂçÊµÑéÊÒ.<br><br>\n");
+	printf("æäº¤æˆåŠŸ!<br><br>\n");
+	printf("è°¢è°¢æ‚¨çš„æ”¯æŒ<br><br>\n");
+	printf("æ³¨æ„: æ”¶å½•è¿‡ç¨‹ä¸å«äººå·¥å¹²é¢„ï¼Œå¤©ç½‘ä¸ä¿è¯æ”¶å½•æ‚¨æäº¤çš„ç½‘ç«™ã€‚<br><br>\n");
+	printf("æœ¬é¡µ 5 ç§’åè‡ªåŠ¨è½¬åˆ° ç›¸å…³ç½‘é¡µ ......<br><br>\n");
+	printf("&copy 2003 åŒ—å¤§ç½‘ç»œå®éªŒå®¤.<br><br>\n");
 	printf("</center></body>\n<html>");
 
 	return 0;

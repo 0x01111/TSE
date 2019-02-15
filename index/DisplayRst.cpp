@@ -2,7 +2,6 @@
 #include "DisplayRst.h"
 #include "StrFun.h"
 
-
 using namespace std;
 
 CDisplayRst::CDisplayRst()
@@ -13,149 +12,170 @@ CDisplayRst::~CDisplayRst()
 {
 }
 
-//LB_c: strQueryÎªÔ­Ê¼µÄÓÃ»§²éÑ¯´®£¬fUsedMsecÎªËÑË÷ºÄÊ±£¬iRstNumÎªËÑË÷½á¹ûµÄ×ÜÌõÊı£¬startÎªÏÔÊ¾½á¹û¼¯µÄµÚ¼¸Ò³
+//LB_c: strQueryä¸ºåŸå§‹çš„ç”¨æˆ·æŸ¥è¯¢ä¸²ï¼ŒfUsedMsecä¸ºæœç´¢è€—æ—¶ï¼ŒiRstNumä¸ºæœç´¢ç»“æœçš„æ€»æ¡æ•°ï¼Œstartä¸ºæ˜¾ç¤ºç»“æœé›†çš„ç¬¬å‡ é¡µ
 bool CDisplayRst::ShowMiddle(string strQuery, float fUsedMsec, unsigned iRstNum, unsigned start)
 {
-	//LB_c: iPageNumÎª½á¹û×ÜÒ³Êı£¬RstPerPageÎªÃ¿Ò³ÏÔÊ¾µÄÌõÊı£¬ÊÇÒ»¸ö³£Á¿
+	//LB_c: iPageNumä¸ºç»“æœæ€»é¡µæ•°ï¼ŒRstPerPageä¸ºæ¯é¡µæ˜¾ç¤ºçš„æ¡æ•°ï¼Œæ˜¯ä¸€ä¸ªå¸¸é‡
 	unsigned iPageNum = 0;
-	if (iRstNum%RstPerPage == 0){
-		iPageNum = iRstNum/RstPerPage;
-	} else {
-		iPageNum = iRstNum/RstPerPage + 1;
+	if (iRstNum % RstPerPage == 0)
+	{
+		iPageNum = iRstNum / RstPerPage;
+	}
+	else
+	{
+		iPageNum = iRstNum / RstPerPage + 1;
 	}
 
-	//LB_c: ÏÔÊ¾ÌáÊ¾ĞÅÏ¢: ÓÃ»§²éÑ¯µÄ´®£¬ËÑË÷ºÄÊ±£¬¹²ÓĞ¶àÉÙÌõ½á¹û£¬µ±Ç°ÏÔÊ¾µÄÊÇxµ½yÌõ
+	//LB_c: æ˜¾ç¤ºæç¤ºä¿¡æ¯: ç”¨æˆ·æŸ¥è¯¢çš„ä¸²ï¼Œæœç´¢è€—æ—¶ï¼Œå…±æœ‰å¤šå°‘æ¡ç»“æœï¼Œå½“å‰æ˜¾ç¤ºçš„æ˜¯xåˆ°yæ¡
 	cout << "<title>TSE Search</title>\n"
-		<< "<font  color=#008080 size=2>" << endl
-		<< "²éÕÒ: <b><font color=\"#000000\" size=\"2\">" 
-		<< strQuery << "</b></font>" << endl
-		<< "·ÑÊ±<b><font color=\"#000000\" size=\"2\">"
-		<< fUsedMsec
-		<< "</font></b> ºÁÃë,¹²ÕÒµ½<b><font color=\"#000000\" size=\"2\">"
-		<< iRstNum
-		<< "</font></b> ÆªÎÄµµ,ÏÂÃæÊÇµÚ <b><font color=\"#000000\" size=\"2\">";
-	if (iRstNum == 0){
-		cout << "0</font></b>µ½µÚ <b><font color=\"#000000\" size=\"2\">"
-			<< "0</font></b>¸ö<br>" << endl;
+		 << "<font  color=#008080 size=2>" << endl
+		 << "æŸ¥æ‰¾: <b><font color=\"#000000\" size=\"2\">"
+		 << strQuery << "</b></font>" << endl
+		 << "è´¹æ—¶<b><font color=\"#000000\" size=\"2\">"
+		 << fUsedMsec
+		 << "</font></b> æ¯«ç§’,å…±æ‰¾åˆ°<b><font color=\"#000000\" size=\"2\">"
+		 << iRstNum
+		 << "</font></b> ç¯‡æ–‡æ¡£,ä¸‹é¢æ˜¯ç¬¬ <b><font color=\"#000000\" size=\"2\">";
+	if (iRstNum == 0)
+	{
+		cout << "0</font></b>åˆ°ç¬¬ <b><font color=\"#000000\" size=\"2\">"
+			 << "0</font></b>ä¸ª<br>" << endl;
 		return true;
 	}
-	cout << (start-1)*RstPerPage + 1 << "</font></b>µ½µÚ <b><font color=\"#000000\" size=\"2\">";
-	if (iRstNum >= start*RstPerPage ) {
-		cout << start*RstPerPage << "</font></b>¸ö&nbsp;&nbsp;&nbsp;&nbsp;" << endl;
-	} else {
-		cout << iRstNum << "</font></b>¸ö&nbsp;&nbsp;&nbsp;&nbsp;" << endl;
+	cout << (start - 1) * RstPerPage + 1 << "</font></b>åˆ°ç¬¬ <b><font color=\"#000000\" size=\"2\">";
+	if (iRstNum >= start * RstPerPage)
+	{
+		cout << start * RstPerPage << "</font></b>ä¸ª&nbsp;&nbsp;&nbsp;&nbsp;" << endl;
+	}
+	else
+	{
+		cout << iRstNum << "</font></b>ä¸ª&nbsp;&nbsp;&nbsp;&nbsp;" << endl;
 	}
 
-	//LB_c: ¹©ÓÃ»§Ñ¡ÔñµÄ½á¹ûÒ³µÄÁ´½Ó£¬
-	cout << "Ñ¡ÔñÒ³Ãæ: " ;	
-	for (unsigned i=0; i<iPageNum; i++) {
-		//LB_c: µ±Ç°Ò³ÃæµÄÒ³ºÅÃ»ÓĞÁ´½Ó
-		if (i+1 == start ) {
-			cout << i+1 << "</a>&nbsp;&nbsp;";
+	//LB_c: ä¾›ç”¨æˆ·é€‰æ‹©çš„ç»“æœé¡µçš„é“¾æ¥ï¼Œ
+	cout << "é€‰æ‹©é¡µé¢: ";
+	for (unsigned i = 0; i < iPageNum; i++)
+	{
+		//LB_c: å½“å‰é¡µé¢çš„é¡µå·æ²¡æœ‰é“¾æ¥
+		if (i + 1 == start)
+		{
+			cout << i + 1 << "</a>&nbsp;&nbsp;";
 		}
-		//LB_c: ÆäËûÒ³ºÅÌá¹©Á´½Ó£¬×¢ÒâÁ´½ÓÊÇ"/yc-cgi-bin/index/TSESearch?word=***&start=***"£¬ºóÃæ½øĞĞËµÃ÷
-		else{
-			cout << "<a href=\"/yc-cgi-bin/index/TSESearch?word=" 
-				<< strQuery << "&start=" << i+1 << "\">"
-				<< i+1 << "</a>&nbsp;&nbsp;";
+		//LB_c: å…¶ä»–é¡µå·æä¾›é“¾æ¥ï¼Œæ³¨æ„é“¾æ¥æ˜¯"/yc-cgi-bin/index/TSESearch?word=***&start=***"ï¼Œåé¢è¿›è¡Œè¯´æ˜
+		else
+		{
+			cout << "<a href=\"/yc-cgi-bin/index/TSESearch?word="
+				 << strQuery << "&start=" << i + 1 << "\">"
+				 << i + 1 << "</a>&nbsp;&nbsp;";
 		}
 	}
-	
+
 	return true;
 }
-//µÚ6½ÚÖĞÌáµ½¹ıÈç¹û´ÓËÑË÷½á¹ûÒ³ÃæÖĞ½øĞĞĞÂµÄËÑË÷£¬ÏÔÊ¾½á¹ûÊÇÕı³£µÄ£¬ÎªÊ²Ã´ÄØ? ÉÏÃæ´úÂëÖĞËµÃ÷ÁËÒ³ºÅÁ´½ÓÎª
-//"yc-cgi-bin/index/TSESearch?word=***&start=***"ĞÎÊ½£¬ÏÔÈ»µÚ¶ş¸ö¼üÖµ¶ÔÊÇstart£¬ËùÒÔHtmlInputs[1].Value¾ÍÊÇ
-//ÓÃ»§µã»÷µÄÒ³ºÅ£¬ËùÒÔm_iStartµÄÖµÒ²ÊÇÕıÈ·µÄ£¬Òò´ËÏÔÊ¾½á¹ûÊÇÕı³£µÄ¡£
-//ÓÉÒ³ºÅÁ´½Ó¿ÉÒÔ¿´³ö£¬ÓÃ»§µã»÷Ò³ºÅÒÔºóÓÖÖ´ĞĞÁËÒ»´Îcgi³ÌĞò/yc-cgi-bin/index/TSESearch£¬¼´ÓÖÖØĞÂËÑË÷ÁËÒ»´Î£¬¶ø²»ÊÇ
-//Ö±½ÓÔÚÉÏ´ÎµÄ½á¹û¼¯ÖĞÈ¡³ö¶ÔÓ¦Ò³µÄÄÚÈİ½øĞĞÏÔÊ¾£¬ÕâÊÇÎªºÎÄØ? ÕâËÆºõÌ«²»ºÏÀíÁË£¬ËÑË÷½á¹û¼¯¶¼ÒÑ¾­ÓĞÁË£¬Ö»Ğè¼òµ¥µÄ
-//ÊµÏÖÏÔÊ¾²»Í¬µÄÒ³¾ÍĞĞÁË¡£
+//ç¬¬6èŠ‚ä¸­æåˆ°è¿‡å¦‚æœä»æœç´¢ç»“æœé¡µé¢ä¸­è¿›è¡Œæ–°çš„æœç´¢ï¼Œæ˜¾ç¤ºç»“æœæ˜¯æ­£å¸¸çš„ï¼Œä¸ºä»€ä¹ˆå‘¢? ä¸Šé¢ä»£ç ä¸­è¯´æ˜äº†é¡µå·é“¾æ¥ä¸º
+//"yc-cgi-bin/index/TSESearch?word=***&start=***"å½¢å¼ï¼Œæ˜¾ç„¶ç¬¬äºŒä¸ªé”®å€¼å¯¹æ˜¯startï¼Œæ‰€ä»¥HtmlInputs[1].Valueå°±æ˜¯
+//ç”¨æˆ·ç‚¹å‡»çš„é¡µå·ï¼Œæ‰€ä»¥m_iStartçš„å€¼ä¹Ÿæ˜¯æ­£ç¡®çš„ï¼Œå› æ­¤æ˜¾ç¤ºç»“æœæ˜¯æ­£å¸¸çš„ã€‚
+//ç”±é¡µå·é“¾æ¥å¯ä»¥çœ‹å‡ºï¼Œç”¨æˆ·ç‚¹å‡»é¡µå·ä»¥ååˆæ‰§è¡Œäº†ä¸€æ¬¡cgiç¨‹åº/yc-cgi-bin/index/TSESearchï¼Œå³åˆé‡æ–°æœç´¢äº†ä¸€æ¬¡ï¼Œè€Œä¸æ˜¯
+//ç›´æ¥åœ¨ä¸Šæ¬¡çš„ç»“æœé›†ä¸­å–å‡ºå¯¹åº”é¡µçš„å†…å®¹è¿›è¡Œæ˜¾ç¤ºï¼Œè¿™æ˜¯ä¸ºä½•å‘¢? è¿™ä¼¼ä¹å¤ªä¸åˆç†äº†ï¼Œæœç´¢ç»“æœé›†éƒ½å·²ç»æœ‰äº†ï¼Œåªéœ€ç®€å•çš„
+//å®ç°æ˜¾ç¤ºä¸åŒçš„é¡µå°±è¡Œäº†ã€‚
 
-bool CDisplayRst::ShowBelow(vector<string>&vecQuery, set<string> &setRelevantRst, 
-		vector<DocIdx> &vecDocIdx, unsigned start)
+bool CDisplayRst::ShowBelow(vector<string> &vecQuery, set<string> &setRelevantRst,
+							vector<DocIdx> &vecDocIdx, unsigned start)
 {
 	cout << "<ol>" << endl;
 
-	set<string>::iterator it= setRelevantRst.begin();
-	unsigned iDocNumber=0;
-	//LB_c: startÎªÓÃ»§Ñ¡ÔñµÄÏÔÊ¾½á¹û¼¯µÄÒ³ºÅ£¬RstPerPageÎªÃ¿Ò³ÏÔÊ¾µÄ¼ÇÂ¼ÌõÊı£¬ËùÒÔÕâÀï¼ÆËãÒªÏÔÊ¾µÄ½á¹ûÆğÖ¹ĞòºÅ£¬
-	// ¼´ÏÔÊ¾iRstBeginµ½iRstEndµÄ½á¹û¼ÇÂ¼¡£ÕâÀïÒ²¿ÉÒÔ¿´³östartÒ³ºÅÓ¦¸ÃÊÇ´Ó1¿ªÊ¼µÄ¡£
-	unsigned iRstBegin = (start-1)*RstPerPage;
-	unsigned iRstEnd = start*RstPerPage - 1;
+	set<string>::iterator it = setRelevantRst.begin();
+	unsigned iDocNumber = 0;
+	//LB_c: startä¸ºç”¨æˆ·é€‰æ‹©çš„æ˜¾ç¤ºç»“æœé›†çš„é¡µå·ï¼ŒRstPerPageä¸ºæ¯é¡µæ˜¾ç¤ºçš„è®°å½•æ¡æ•°ï¼Œæ‰€ä»¥è¿™é‡Œè®¡ç®—è¦æ˜¾ç¤ºçš„ç»“æœèµ·æ­¢åºå·ï¼Œ
+	// å³æ˜¾ç¤ºiRstBeginåˆ°iRstEndçš„ç»“æœè®°å½•ã€‚è¿™é‡Œä¹Ÿå¯ä»¥çœ‹å‡ºstarté¡µå·åº”è¯¥æ˜¯ä»1å¼€å§‹çš„ã€‚
+	unsigned iRstBegin = (start - 1) * RstPerPage;
+	unsigned iRstEnd = start * RstPerPage - 1;
 
 	vector<string> vecRefUrl;
 	vector<string>::iterator itVecRefUrl;
 	cout << "<tr bgcolor=#e7eefc>";
 	bool bColor = true;
 
-	//LB_c: ´ò¿ªÔ­Ê¼µÄÔ­Ê¼ÍøÒ³Êı¾İ¿â£¬ÓÃ»§µã»÷"ÍøÒ³¿ìÕÕ"Ê±Òª´ÓÖĞ¶Á³öÍøÒ³²¢ÏÔÊ¾³öÀ´£¬ÕâÀïÒ²ËµÃ÷ÍøÒ³¿ìÕÕÊÇ
-	//´æÔÚ·şÎñÆ÷µÄÀúÊ·Êı¾İ£¬¶ø²»ÊÇ´ò¿ªÍøÖ·µÃµ½µÄÊµÊ±ÍøÒ³¡£
+	//LB_c: æ‰“å¼€åŸå§‹çš„åŸå§‹ç½‘é¡µæ•°æ®åº“ï¼Œç”¨æˆ·ç‚¹å‡»"ç½‘é¡µå¿«ç…§"æ—¶è¦ä»ä¸­è¯»å‡ºç½‘é¡µå¹¶æ˜¾ç¤ºå‡ºæ¥ï¼Œè¿™é‡Œä¹Ÿè¯´æ˜ç½‘é¡µå¿«ç…§æ˜¯
+	//å­˜åœ¨æœåŠ¡å™¨çš„å†å²æ•°æ®ï¼Œè€Œä¸æ˜¯æ‰“å¼€ç½‘å€å¾—åˆ°çš„å®æ—¶ç½‘é¡µã€‚
 	ifstream ifs(RAWPAGE_FILE_NAME.c_str());
-	if (!ifs) {
+	if (!ifs)
+	{
 		cout << "Cannot open " << RAWPAGE_FILE_NAME << " for input\n";
 		return false;
 	}
 
-	for ( ; it!=setRelevantRst.end(); ++it,iDocNumber++ ){
-		//LB_c: ÕâÁ½ĞĞÅĞ¶ÏĞòºÅ£¬ÔÚsetRelevantRstÖĞÈ¡³öµÚiRstBeginµ½µÚiRstEndÌõ¼ÇÂ¼¡£
-		if (iDocNumber < iRstBegin ) continue;
-		if (iDocNumber > iRstEnd ) break;
+	for (; it != setRelevantRst.end(); ++it, iDocNumber++)
+	{
+		//LB_c: è¿™ä¸¤è¡Œåˆ¤æ–­åºå·ï¼Œåœ¨setRelevantRstä¸­å–å‡ºç¬¬iRstBeginåˆ°ç¬¬iRstEndæ¡è®°å½•ã€‚
+		if (iDocNumber < iRstBegin)
+			continue;
+		if (iDocNumber > iRstEnd)
+			break;
 
-		cout << "<li><font color=black size=2>" << endl ;
-		//LB_c: »ñÈ¡½á¹û¼ÇÂ¼µÄdocid
-		int docId = atoi( (*it).c_str() );
-		//LB_c: vecDocIdxÔÚmainº¯ÊıÖĞËµÃ÷¹ı£¬ÊÇÍøÒ³Ë÷Òı±í(¼ÇÂ¼docidµ½offsetµÄÓ³Éä)£¬ÕâÀï»ñÈ¡Ç°ºóÁ½¸öÍøÒ³ÔÚ
-		//Ô­Ê¼ÍøÒ³Êı¾İ¿âÖĞµÄoffset£¬Ïà¼õµÃµ½¸ÃÍøÒ³µÄ³¤¶È¡£
-		int length = vecDocIdx[docId+1].offset - vecDocIdx[docId].offset;
+		cout << "<li><font color=black size=2>" << endl;
+		//LB_c: è·å–ç»“æœè®°å½•çš„docid
+		int docId = atoi((*it).c_str());
+		//LB_c: vecDocIdxåœ¨mainå‡½æ•°ä¸­è¯´æ˜è¿‡ï¼Œæ˜¯ç½‘é¡µç´¢å¼•è¡¨(è®°å½•docidåˆ°offsetçš„æ˜ å°„)ï¼Œè¿™é‡Œè·å–å‰åä¸¤ä¸ªç½‘é¡µåœ¨
+		//åŸå§‹ç½‘é¡µæ•°æ®åº“ä¸­çš„offsetï¼Œç›¸å‡å¾—åˆ°è¯¥ç½‘é¡µçš„é•¿åº¦ã€‚
+		int length = vecDocIdx[docId + 1].offset - vecDocIdx[docId].offset;
 
-		//LB_c: ½¨Á¢»º³åÇøpContent£¬´ÓÔ­Ê¼ÍøÒ³Êı¾İ¿âÎÄ¼şÖĞ¶Á³ö¸ÃÍøÒ³Êı¾İ
-		char *pContent = new char[length+1];
-		memset(pContent, 0, length+1);
+		//LB_c: å»ºç«‹ç¼“å†²åŒºpContentï¼Œä»åŸå§‹ç½‘é¡µæ•°æ®åº“æ–‡ä»¶ä¸­è¯»å‡ºè¯¥ç½‘é¡µæ•°æ®
+		char *pContent = new char[length + 1];
+		memset(pContent, 0, length + 1);
 		ifs.seekg(vecDocIdx[docId].offset);
 		ifs.read(pContent, length);
 
 		char *s;
 		s = pContent;
-		string url,tmp = pContent;
-		string::size_type idx1 = 0, idx2=0;
+		string url, tmp = pContent;
+		string::size_type idx1 = 0, idx2 = 0;
 
-		//LB_c: ´ÓÍøÒ³Êı¾İÖĞ°ÑurlÌáÈ¡³öÀ´
+		//LB_c: ä»ç½‘é¡µæ•°æ®ä¸­æŠŠurlæå–å‡ºæ¥
 		idx1 = tmp.find("url: ");
-		if( idx1 == string::npos ) continue;
+		if (idx1 == string::npos)
+			continue;
 		idx2 = tmp.find("\n", idx1);
-		if( idx1 == string::npos ) continue;
-		url = tmp.substr(idx1+5, idx2 - idx1 - 5);
+		if (idx1 == string::npos)
+			continue;
+		url = tmp.substr(idx1 + 5, idx2 - idx1 - 5);
 
-		//LB_c: vecQueryÔÚmainº¯ÊıÖĞ½éÉÜ¹ı£¬ÊÇËÑË÷´®·Ö¸îÒÔºóµÄ¹Ø¼ü´Ê£¬ÕâÀï½«ÕâĞ©¹Ø¼ü´ÊÓÃ"+"Á¬½ÓÆğÀ´
-		//ÔÚÍøÒ³¿ìÕÕÖĞÏÔÊ¾£¬ÓÃÓÚÌáÊ¾ÓÃ»§¡£
+		//LB_c: vecQueryåœ¨mainå‡½æ•°ä¸­ä»‹ç»è¿‡ï¼Œæ˜¯æœç´¢ä¸²åˆ†å‰²ä»¥åçš„å…³é”®è¯ï¼Œè¿™é‡Œå°†è¿™äº›å…³é”®è¯ç”¨"+"è¿æ¥èµ·æ¥
+		//åœ¨ç½‘é¡µå¿«ç…§ä¸­æ˜¾ç¤ºï¼Œç”¨äºæç¤ºç”¨æˆ·ã€‚
 		string word;
-		for(unsigned int i=0; i< vecQuery.size(); i++){ 
-			word = word + "+" + vecQuery[i]; 
+		for (unsigned int i = 0; i < vecQuery.size(); i++)
+		{
+			word = word + "+" + vecQuery[i];
 		}
 		word = word.substr(1);
 
 		//========================================================================================================
-		//LB_c: ÒÔÏÂÊä³öÃ¿Ìõ½á¹û¼ÇÂ¼µÄ¾ßÌåÄÚÈİ£¬°üÀ¨: ÍøÒ³µÄÁ´½Ó£¬ÍøÒ³³¤¶È£¬ÍøÒ³¿ìÕÕÁ´½ÓºÍÍøÒ³ÄÚÈİÕªÒª
+		//LB_c: ä»¥ä¸‹è¾“å‡ºæ¯æ¡ç»“æœè®°å½•çš„å…·ä½“å†…å®¹ï¼ŒåŒ…æ‹¬: ç½‘é¡µçš„é“¾æ¥ï¼Œç½‘é¡µé•¿åº¦ï¼Œç½‘é¡µå¿«ç…§é“¾æ¥å’Œç½‘é¡µå†…å®¹æ‘˜è¦
 
-		//LB_c: ÍøÒ³¿ìÕÕÁ´½Óµ½ÁíÒ»¸öcgi³ÌĞò: /yc-cgi-bin/index/Snapshot£¬¼´µã»÷"ÍøÒ³¿ìÕÕ"ºó£¬ÓÉcgi³ÌĞò
-		///yc-cgi-bin/index/SnapshotÀ´´¦Àí¡£
+		//LB_c: ç½‘é¡µå¿«ç…§é“¾æ¥åˆ°å¦ä¸€ä¸ªcgiç¨‹åº: /yc-cgi-bin/index/Snapshotï¼Œå³ç‚¹å‡»"ç½‘é¡µå¿«ç…§"åï¼Œç”±cgiç¨‹åº
+		///yc-cgi-bin/index/Snapshotæ¥å¤„ç†ã€‚
 		cout << "<a href=" << url << ">" << url << "</a>,&nbsp;"
-			<< length << "<font  color=#008080>×Ö½Ú</font>" << ",&nbsp;"
-			<< "<a href=/yc-cgi-bin/index/Snapshot?"
-			<< "word=" << word << "&"
-			<< "url="<< url
-			<< " target=_blank>"
-			<< "[ÍøÒ³¿ìÕÕ]</a>" 
-			<< endl << "<br>";
+			 << length << "<font  color=#008080>å­—èŠ‚</font>"
+			 << ",&nbsp;"
+			 << "<a href=/yc-cgi-bin/index/Snapshot?"
+			 << "word=" << word << "&"
+			 << "url=" << url
+			 << " target=_blank>"
+			 << "[ç½‘é¡µå¿«ç…§]</a>"
+			 << endl
+			 << "<br>";
 
-		if (length > 400*1024) {    // if more than 400KB
+		if (length > 400 * 1024)
+		{ // if more than 400KB
 			delete[] pContent;
 			continue;
 		}
 
-		//LB_c: ÒÔÏÂÊÇ´ÓÍøÒ³Êı¾İÖĞÌáÈ¡ÕıÎÄ£¬È»ºó´ÓÕıÎÄÖĞÌáÈ¡ÍøÒ³ÕªÒª£¬²¢½øĞĞÏÔÊ¾¡£ÕâÀï²»ÏêÏ¸½âÊÍ¡£
-		// skip HEAD 
-		int bytesRead = 0,newlines = 0;
-		while (newlines != 2 && bytesRead != HEADER_BUF_SIZE-1) {
+		//LB_c: ä»¥ä¸‹æ˜¯ä»ç½‘é¡µæ•°æ®ä¸­æå–æ­£æ–‡ï¼Œç„¶åä»æ­£æ–‡ä¸­æå–ç½‘é¡µæ‘˜è¦ï¼Œå¹¶è¿›è¡Œæ˜¾ç¤ºã€‚è¿™é‡Œä¸è¯¦ç»†è§£é‡Šã€‚
+		// skip HEAD
+		int bytesRead = 0, newlines = 0;
+		while (newlines != 2 && bytesRead != HEADER_BUF_SIZE - 1)
+		{
 			if (*s == '\n')
 				newlines++;
 			else
@@ -163,11 +183,13 @@ bool CDisplayRst::ShowBelow(vector<string>&vecQuery, set<string> &setRelevantRst
 			s++;
 			bytesRead++;
 		}
-		if (bytesRead == HEADER_BUF_SIZE-1) continue;
+		if (bytesRead == HEADER_BUF_SIZE - 1)
+			continue;
 
 		// skip header
-		bytesRead = 0,newlines = 0;
-		while (newlines != 2 && bytesRead != HEADER_BUF_SIZE-1) {
+		bytesRead = 0, newlines = 0;
+		while (newlines != 2 && bytesRead != HEADER_BUF_SIZE - 1)
+		{
 			if (*s == '\n')
 				newlines++;
 			else
@@ -175,7 +197,8 @@ bool CDisplayRst::ShowBelow(vector<string>&vecQuery, set<string> &setRelevantRst
 			s++;
 			bytesRead++;
 		}
-		if (bytesRead == HEADER_BUF_SIZE-1) continue;
+		if (bytesRead == HEADER_BUF_SIZE - 1)
+			continue;
 
 		CDocument iDocument;
 		iDocument.RemoveTags(s);
@@ -187,26 +210,36 @@ bool CDisplayRst::ShowBelow(vector<string>&vecQuery, set<string> &setRelevantRst
 
 		// abstract
 		string reserve;
-		if ((unsigned char)line.at(48) < 0x80) {
-			reserve = line.substr(0,48);
-		}else{
-			reserve = line.substr(0,48+1);
+		if ((unsigned char)line.at(48) < 0x80)
+		{
+			reserve = line.substr(0, 48);
+		}
+		else
+		{
+			reserve = line.substr(0, 48 + 1);
 		}
 		reserve = "[" + reserve + "]";
 		unsigned int resNum = 128;
-		if (vecQuery.size() == 1) resNum = 256;
-		for(unsigned int i=0; i< vecQuery.size(); i++){
+		if (vecQuery.size() == 1)
+			resNum = 256;
+		for (unsigned int i = 0; i < vecQuery.size(); i++)
+		{
 			string::size_type idx = 0, cur_idx;
-			idx = line.find(vecQuery[i],idx);
-			if (idx == string::npos) continue;
-			if (idx > resNum ) {
+			idx = line.find(vecQuery[i], idx);
+			if (idx == string::npos)
+				continue;
+			if (idx > resNum)
+			{
 				cur_idx = idx - resNum;
-				while ((unsigned char)line.at(cur_idx) > 0x80 && cur_idx!=idx) { 
-					cur_idx ++; 
+				while ((unsigned char)line.at(cur_idx) > 0x80 && cur_idx != idx)
+				{
+					cur_idx++;
 				}
-				reserve += line.substr(cur_idx+1, resNum*2);
-			}else{
-				reserve += line.substr(idx, resNum*2);
+				reserve += line.substr(cur_idx + 1, resNum * 2);
+			}
+			else
+			{
+				reserve += line.substr(idx, resNum * 2);
 			}
 			reserve += "...";
 			// highlight
@@ -214,72 +247,73 @@ bool CDisplayRst::ShowBelow(vector<string>&vecQuery, set<string> &setRelevantRst
 			CStrFun::ReplaceStr(reserve, vecQuery[i], newKey);
 		}
 		line = reserve;
-		cout << line << endl << endl;
-		//========================================================================================================		
+		cout << line << endl
+			 << endl;
+		//========================================================================================================
 	}
 
 	cout << "</ol>";
 	cout << "<br><br><hr><br>";
-	cout << "&copy 2004 ±±´óÍøÂçÊµÑéÊÒ<br><br>\n";
+	cout << "&copy 2004 åŒ—å¤§ç½‘ç»œå®éªŒå®¤<br><br>\n";
 	cout << "</center></body>\n<html>";
 
 	return true;
 }
 
-//¹ØÓÚÍøÒ³¿ìÕÕ¹¦ÄÜµÄÊµÏÖÔÚSnapshot.cppÖĞ£¬±¾ÏµÁĞÎÄÕÂÖĞ²»Õ¹¿ª½øĞĞÏêÏ¸½âÊÍ¡£µ«ÊÇÓĞÒ»µãÔÚÕâÀïÖ¸³öÒ»ÏÂ£¬´ÓSnapshot.cpp
-//Ô´´úÂëÖĞµÃÖª£¬¿ìÕÕ¹¦ÄÜ´¦ÀíµÄcgi³ÌĞò¸ù¾İ´«ÈëµÄÍøÒ³url´ÓÔ­Ê¼ÍøÒ³Êı¾İ¿âÖĞ¶Á³öÍøÒ³Êı¾İÏÔÊ¾³öÀ´£¬¶ø²éÕÒÍøÒ³Êı¾İÒ²´¦ÀíµÄ
-//ºÜ¸´ÔÓ£¬ÏÈ¼ÓÔØurlË÷ÒıÎÄ¼ş£¬ÔÙ¸ù¾İ´«ÈëurlµÄMD5Öµµ½ÎÄ¼şÖĞÕÒ³öÏàÓ¦µÄdocid£¬È»ºó´ÓÔ­Ê¼ÍøÒ³Êı¾İ¿âÖĞÕÒµ½¸ÃÍøÒ³µÄÊı¾İÔÙ
-//½øĞĞÏÔÊ¾¡£ÎªºÎÕâÑù´¦ÀíÄØ? ÔÚShowBelowÖĞ²»ÊÇÒÑ¾­µÃµ½½á¹ûÍøÒ³µÄÍøÒ³Êı¾İÁËÂğ£¬¿ÉÒÔ»º´æÏÂÀ´£¬ĞèÒªÏÔÊ¾ÍøÒ³¿ìÕÕÊ±Ö±½Ó
-//È¡³ö½øĞĞÏÔÊ¾²»¾Í¿ÉÒÔÁËÂğ?
-
+//å…³äºç½‘é¡µå¿«ç…§åŠŸèƒ½çš„å®ç°åœ¨Snapshot.cppä¸­ï¼Œæœ¬ç³»åˆ—æ–‡ç« ä¸­ä¸å±•å¼€è¿›è¡Œè¯¦ç»†è§£é‡Šã€‚ä½†æ˜¯æœ‰ä¸€ç‚¹åœ¨è¿™é‡ŒæŒ‡å‡ºä¸€ä¸‹ï¼Œä»Snapshot.cpp
+//æºä»£ç ä¸­å¾—çŸ¥ï¼Œå¿«ç…§åŠŸèƒ½å¤„ç†çš„cgiç¨‹åºæ ¹æ®ä¼ å…¥çš„ç½‘é¡µurlä»åŸå§‹ç½‘é¡µæ•°æ®åº“ä¸­è¯»å‡ºç½‘é¡µæ•°æ®æ˜¾ç¤ºå‡ºæ¥ï¼Œè€ŒæŸ¥æ‰¾ç½‘é¡µæ•°æ®ä¹Ÿå¤„ç†çš„
+//å¾ˆå¤æ‚ï¼Œå…ˆåŠ è½½urlç´¢å¼•æ–‡ä»¶ï¼Œå†æ ¹æ®ä¼ å…¥urlçš„MD5å€¼åˆ°æ–‡ä»¶ä¸­æ‰¾å‡ºç›¸åº”çš„docidï¼Œç„¶åä»åŸå§‹ç½‘é¡µæ•°æ®åº“ä¸­æ‰¾åˆ°è¯¥ç½‘é¡µçš„æ•°æ®å†
+//è¿›è¡Œæ˜¾ç¤ºã€‚ä¸ºä½•è¿™æ ·å¤„ç†å‘¢? åœ¨ShowBelowä¸­ä¸æ˜¯å·²ç»å¾—åˆ°ç»“æœç½‘é¡µçš„ç½‘é¡µæ•°æ®äº†å—ï¼Œå¯ä»¥ç¼“å­˜ä¸‹æ¥ï¼Œéœ€è¦æ˜¾ç¤ºç½‘é¡µå¿«ç…§æ—¶ç›´æ¥
+//å–å‡ºè¿›è¡Œæ˜¾ç¤ºä¸å°±å¯ä»¥äº†å—?
 
 bool CDisplayRst::ShowTop()
 {
 	string strHost = string(getenv("HTTP_HOST"));
-	//LB_c: ½á¹ûÍøÒ³µÄbody±êÇ©
+	//LB_c: ç»“æœç½‘é¡µçš„bodyæ ‡ç­¾
 	cout << "<body bgcolor=#ffffff topmargin=2 marginheight=2>"
-	<< "<table class=border=0 width=100% cellspacing=0 cellpadding=0 height=29>" << endl
-	<< "<tr>" << endl
-	//LB_c: ×óÉÏ½ÇµÄ"ÌìÍøËÑË÷"µÄlogoÍ¼Æ¬£¬¸ø¸ÃÍ¼Æ¬¼ÓÁËÒ»¸öµ½strHost/yc/TSE/µÄÁ´½Ó(strHostÊÇÍøÕ¾rootÄ¿Â¼£¬¼´apacheÅäÖÃµÄÍøÕ¾Ä¿Â¼£¬
-	//Ç°ÃæÒÑ¾­ÉèÖÃÎª/var/www/html/)¡£ÕâÑù£¬µã»÷logo»á´ò¿ªstrHost/yc/TSE/ÖĞµÄindex.html£¬¸ÃÍøÒ³ÓëstrHostÖĞµÄindex.htmlÊµ¼ÊÉÏÊÇÒ»ÑùµÄ£¬
-	//Ò²¾ÍÊÇËÑË÷Ö÷Ò³£¬²»ÖªµÀÎªÊ²Ã´²»Ö±½ÓÁ´½Óµ½strHostÖĞµÄindex.html?
-	<< "<td width=36% rowspan=2 height=1>" << "<a href=http://" 
-	<< strHost << "/yc/TSE/><img border=0 src=/yc/TSE/tsetitle.JPG width=308 height=65></a></td>" << endl
-	//LB_c: ¶¥²¿µÄ"ËÑË÷Ö÷Ò³"ºÍ"Ê¹ÓÃ°ïÖú"Á´½Ó£¬Ç°ÕßÓëÉÏÃæµÄlogoÁ´½ÓÒ»Ñù£¬ºóÕßÁ´½Óµ½Ò»¸öÍøÂçÉÏµÄ°ïÖúÊÖ²á¡£
-	<< "<td width=64% height=33 ><font size=2><a href=http://" 
-	<< strHost << "/yc/TSE/>ËÑË÷Ö÷Ò³</a>| <a href=http://e.pku.edu.cn/gbhelp.htm>Ê¹ÓÃ°ïÖú</a> </font><br></td>" << endl
-	<< "</tr>" << endl;
+		 << "<table class=border=0 width=100% cellspacing=0 cellpadding=0 height=29>" << endl
+		 << "<tr>" << endl
+		 //LB_c: å·¦ä¸Šè§’çš„"å¤©ç½‘æœç´¢"çš„logoå›¾ç‰‡ï¼Œç»™è¯¥å›¾ç‰‡åŠ äº†ä¸€ä¸ªåˆ°strHost/yc/TSE/çš„é“¾æ¥(strHostæ˜¯ç½‘ç«™rootç›®å½•ï¼Œå³apacheé…ç½®çš„ç½‘ç«™ç›®å½•ï¼Œ
+		 //å‰é¢å·²ç»è®¾ç½®ä¸º/var/www/html/)ã€‚è¿™æ ·ï¼Œç‚¹å‡»logoä¼šæ‰“å¼€strHost/yc/TSE/ä¸­çš„index.htmlï¼Œè¯¥ç½‘é¡µä¸strHostä¸­çš„index.htmlå®é™…ä¸Šæ˜¯ä¸€æ ·çš„ï¼Œ
+		 //ä¹Ÿå°±æ˜¯æœç´¢ä¸»é¡µï¼Œä¸çŸ¥é“ä¸ºä»€ä¹ˆä¸ç›´æ¥é“¾æ¥åˆ°strHostä¸­çš„index.html?
+		 << "<td width=36% rowspan=2 height=1>"
+		 << "<a href=http://"
+		 << strHost << "/yc/TSE/><img border=0 src=/yc/TSE/tsetitle.JPG width=308 height=65></a></td>" << endl
+		 //LB_c: é¡¶éƒ¨çš„"æœç´¢ä¸»é¡µ"å’Œ"ä½¿ç”¨å¸®åŠ©"é“¾æ¥ï¼Œå‰è€…ä¸ä¸Šé¢çš„logoé“¾æ¥ä¸€æ ·ï¼Œåè€…é“¾æ¥åˆ°ä¸€ä¸ªç½‘ç»œä¸Šçš„å¸®åŠ©æ‰‹å†Œã€‚
+		 << "<td width=64% height=33 ><font size=2><a href=http://"
+		 << strHost << "/yc/TSE/>æœç´¢ä¸»é¡µ</a>| <a href=http://e.pku.edu.cn/gbhelp.htm>ä½¿ç”¨å¸®åŠ©</a> </font><br></td>" << endl
+		 << "</tr>" << endl;
 
-	//LB_c: ÕâÀïÔÚÍøÒ³¶¥²¿¹¹½¨ÁËÒ»¸öĞÂ²éÑ¯µÄform£¬°üÀ¨ËÑË÷¿ò¡¢ËÑË÷°´Å¥ºÍÒşº¬µÄÏÔÊ¾Ò³Âë¼üÖµ¶Ô
+	//LB_c: è¿™é‡Œåœ¨ç½‘é¡µé¡¶éƒ¨æ„å»ºäº†ä¸€ä¸ªæ–°æŸ¥è¯¢çš„formï¼ŒåŒ…æ‹¬æœç´¢æ¡†ã€æœç´¢æŒ‰é’®å’Œéšå«çš„æ˜¾ç¤ºé¡µç é”®å€¼å¯¹
 	cout << "<tr>" << endl
-	<< "<td><p align=\"left\">" << endl
-	<< "<form method=\"get\" action=\"/yc-cgi-bin/index/TSESearch\" name=\"tw\">" << endl
-	//LB_c: ËÑË÷ÊäÈë¿ò
-	<< "<input type=\"text\" name=\"word\" size=\"55\">" << endl
-	//LB_c: ĞÂ²éÑ¯°´Å¥£¬×¢Òâ¸Ãinput±êÇ©ÖĞÃ»ÓĞÉèÖÃname
-	<< "<INPUT TYPE=\"submit\" VALUE=\" ĞÂ²éÑ¯ \">&nbsp;" << endl
-	//LB_c: ¸½¼ÓµÄ¼üÖµ¶Ô£¬¼üÃûÎª"start"£¬ÖµÎª1£¬ÕâÀïÊÇÖ¸Ê¾ÏÔÊ¾ËÑË÷½á¹ûµÄµÚ1Ò³¡£
-	<< "<input type=\"hidden\" name=\"start\" value=\"1\">" << endl
-	<< "</form>" << endl
-	<< "</tr>" << endl
-	<< "</table>" << endl;
+		 << "<td><p align=\"left\">" << endl
+		 << "<form method=\"get\" action=\"/yc-cgi-bin/index/TSESearch\" name=\"tw\">" << endl
+		 //LB_c: æœç´¢è¾“å…¥æ¡†
+		 << "<input type=\"text\" name=\"word\" size=\"55\">" << endl
+		 //LB_c: æ–°æŸ¥è¯¢æŒ‰é’®ï¼Œæ³¨æ„è¯¥inputæ ‡ç­¾ä¸­æ²¡æœ‰è®¾ç½®name
+		 << "<INPUT TYPE=\"submit\" VALUE=\" æ–°æŸ¥è¯¢ \">&nbsp;" << endl
+		 //LB_c: é™„åŠ çš„é”®å€¼å¯¹ï¼Œé”®åä¸º"start"ï¼Œå€¼ä¸º1ï¼Œè¿™é‡Œæ˜¯æŒ‡ç¤ºæ˜¾ç¤ºæœç´¢ç»“æœçš„ç¬¬1é¡µã€‚
+		 << "<input type=\"hidden\" name=\"start\" value=\"1\">" << endl
+		 << "</form>" << endl
+		 << "</tr>" << endl
+		 << "</table>" << endl;
 
-	//LB_c: ÖĞ¼äÀ¶É«µÄºáÌõ£¬ÉÏÃæĞ´ÓĞ"Í¼Æ¬"
+	//LB_c: ä¸­é—´è“è‰²çš„æ¨ªæ¡ï¼Œä¸Šé¢å†™æœ‰"å›¾ç‰‡"
 	cout << "<table border=0 width=100% cellspacing=1 cellpadding=0 height=1>" << endl
-	<< "<tr>" << endl
-	<< "<td width=68 align=center bgcolor=#000066 valign=middle><font size=2><b><font color=#FFFFFF>Í¼  Æ¬</font></b></font></td>"
- 	<< endl
-	<< "</tr>" << endl
-	<< "<tr>"
-	<< "<td width=100% align=left colspan=3 height=0>"
-	<< "</td></tr>" << endl
-	<< "</table>" << endl;
+		 << "<tr>" << endl
+		 << "<td width=68 align=center bgcolor=#000066 valign=middle><font size=2><b><font color=#FFFFFF>å›¾  ç‰‡</font></b></font></td>"
+		 << endl
+		 << "</tr>" << endl
+		 << "<tr>"
+		 << "<td width=100% align=left colspan=3 height=0>"
+		 << "</td></tr>" << endl
+		 << "</table>" << endl;
 
 	return true;
 }
-//µÚ6½ÚÖĞÌáµ½¹ıÈç¹û´ÓËÑË÷½á¹ûÒ³ÃæÖĞ½øĞĞĞÂµÄËÑË÷£¬ÏÔÊ¾½á¹ûÊÇÕı³£µÄ£¬ÎªÊ²Ã´ÄØ? ¿´Ò»ÏÂ´úÂëÖĞµÄĞÂ²éÑ¯µÄform£¬formÖĞÓĞ
-//Èı¸öinput£¬¶øÖ»ÓĞÁ½¸öinputÓĞname£¬ËùÒÔÓÃ»§µã»÷"ĞÂ²éÑ¯"°´Å¥ºó£¬Ìá½»µÄURLÖĞÓĞÁ½¸ö¼üÖµ¶Ô(wordºÍstart)£¬ÀıÈç²éÑ¯"±±¾©´óÑ§"µÃµ½
-//http://localhost:8080/yc-cgi-bin/index/TSESearch?word=%B1%B1%BE%A9%B4%F3%D1%A7&start=1£¬Òò´ËHtmlInputs[1]¾Í¶ÔÓ¦start¼üÖµ¶Ô£¬
-//HtmlInputs[1].ValueµÄÖµÎª1£¬ËùÒÔm_iStartÉèÖÃÎª1£¬¼´ÏÔÊ¾½á¹û¼¯µÄµÚ1Ò³¡£
-//ÕâÀïÈç¹ûÔÚ"ĞÂ²éÑ¯"°´Å¥µÄinput±êÇ©ÖĞ¶¨ÒåÁËname£¬ÔòURL»áÓĞÈı¸ö¼üÖµ¶Ô£¬µÚ¶ş¸ö¼üÖµ¶Ô¶ÔÓ¦"ĞÂ²éÑ¯"°´Å¥£¬HtmlInputs[1]¾Í²»ÊÇstart¼üÖµ¶ÔÁË£¬
-//ËùÒÔÒ²»á³ö´í! ¶ÁÕßÅóÓÑÃÇ¿ÉÒÔ²âÊÔÒ»ÏÂ¡£
+//ç¬¬6èŠ‚ä¸­æåˆ°è¿‡å¦‚æœä»æœç´¢ç»“æœé¡µé¢ä¸­è¿›è¡Œæ–°çš„æœç´¢ï¼Œæ˜¾ç¤ºç»“æœæ˜¯æ­£å¸¸çš„ï¼Œä¸ºä»€ä¹ˆå‘¢? çœ‹ä¸€ä¸‹ä»£ç ä¸­çš„æ–°æŸ¥è¯¢çš„formï¼Œformä¸­æœ‰
+//ä¸‰ä¸ªinputï¼Œè€Œåªæœ‰ä¸¤ä¸ªinputæœ‰nameï¼Œæ‰€ä»¥ç”¨æˆ·ç‚¹å‡»"æ–°æŸ¥è¯¢"æŒ‰é’®åï¼Œæäº¤çš„URLä¸­æœ‰ä¸¤ä¸ªé”®å€¼å¯¹(wordå’Œstart)ï¼Œä¾‹å¦‚æŸ¥è¯¢"åŒ—äº¬å¤§å­¦"å¾—åˆ°
+//http://localhost:8080/yc-cgi-bin/index/TSESearch?word=%B1%B1%BE%A9%B4%F3%D1%A7&start=1ï¼Œå› æ­¤HtmlInputs[1]å°±å¯¹åº”starté”®å€¼å¯¹ï¼Œ
+//HtmlInputs[1].Valueçš„å€¼ä¸º1ï¼Œæ‰€ä»¥m_iStartè®¾ç½®ä¸º1ï¼Œå³æ˜¾ç¤ºç»“æœé›†çš„ç¬¬1é¡µã€‚
+//è¿™é‡Œå¦‚æœåœ¨"æ–°æŸ¥è¯¢"æŒ‰é’®çš„inputæ ‡ç­¾ä¸­å®šä¹‰äº†nameï¼Œåˆ™URLä¼šæœ‰ä¸‰ä¸ªé”®å€¼å¯¹ï¼Œç¬¬äºŒä¸ªé”®å€¼å¯¹å¯¹åº”"æ–°æŸ¥è¯¢"æŒ‰é’®ï¼ŒHtmlInputs[1]å°±ä¸æ˜¯starté”®å€¼å¯¹äº†ï¼Œ
+//æ‰€ä»¥ä¹Ÿä¼šå‡ºé”™! è¯»è€…æœ‹å‹ä»¬å¯ä»¥æµ‹è¯•ä¸€ä¸‹ã€‚
