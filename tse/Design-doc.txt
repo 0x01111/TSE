@@ -1,0 +1,16 @@
+　　　　　　　　Tiny Search Engine
+
+* Function description:
+	see README file.
+
+* Usage
+	see README file.
+
+* Files in the package��
+	see README file.
+
+* Classes of TSE
+	just see file names
+
+* Bugs
+	have not deal with "chunked" while accecpting pages

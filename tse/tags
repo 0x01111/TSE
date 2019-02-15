@@ -1,0 +1,951 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.7	//
+ABS_PATH	uri/lex.uri.c	1296;"	d	file:
+ACCEPT	uri/lex.uri.c	1300;"	d	file:
+ANCHOR_TEXT_LEN	Page.h	/^const int ANCHOR_TEXT_LEN       = 256;$/;"	v
+ATTRIBUTE	hlink/lex.hlink.c	5582;"	d	file:
+AT_REG_NAME	include/uri.h	5;"	d
+AT_REG_NAME	uri/uri.h	5;"	d
+AT_SERVER	include/uri.h	4;"	d
+AT_SERVER	uri/uri.h	4;"	d
+AUTHORITY	uri/lex.uri.c	1291;"	d	file:
+AUTH_DESTROY	uri/lex.uri.c	1258;"	d	file:
+AUTH_INIT	uri/lex.uri.c	1246;"	d	file:
+AddUrl	Crawl.cpp	/^void CCrawl::AddUrl(const char * url)$/;"	f	class:CCrawl
+BEGIN	hlink/lex.hlink.c	97;"	d	file:
+BEGIN	uri/lex.uri.c	144;"	d	file:
+CCrawl	Crawl.cpp	/^CCrawl::CCrawl()$/;"	f	class:CCrawl
+CCrawl	Crawl.cpp	/^CCrawl::CCrawl(string inputFileName, string outputFileName)$/;"	f	class:CCrawl
+CCrawl	Crawl.h	/^class CCrawl$/;"	c
+CDataEngine	DataEngine.cpp	/^CDataEngine::CDataEngine()$/;"	f	class:CDataEngine
+CDataEngine	DataEngine.cpp	/^CDataEngine::CDataEngine(string str)$/;"	f	class:CDataEngine
+CDataEngine	DataEngine.h	/^class CDataEngine$/;"	c
+CDatabaseEngine	DatabaseEngine.cpp	/^CDatabaseEngine::CDatabaseEngine(string str) : CDataEngine(str)$/;"	f	class:CDatabaseEngine
+CDatabaseEngine	DatabaseEngine.h	/^class CDatabaseEngine : public CDataEngine$/;"	c
+CFileEngine	FileEngine.cpp	/^CFileEngine::CFileEngine()$/;"	f	class:CFileEngine
+CFileEngine	FileEngine.cpp	/^CFileEngine::CFileEngine(string str) : CDataEngine (str)$/;"	f	class:CFileEngine
+CFileEngine	FileEngine.h	/^class CFileEngine : public CDataEngine$/;"	c
+CHttp	Http.cpp	/^CHttp::CHttp()$/;"	f	class:CHttp
+CHttp	Http.h	/^class CHttp$/;"	c
+CIsamFile	IsamFile.cpp	/^CIsamFile::CIsamFile()$/;"	f	class:CIsamFile
+CIsamFile	IsamFile.cpp	/^CIsamFile::CIsamFile(string str) : CFileEngine(str)$/;"	f	class:CIsamFile
+CIsamFile	IsamFile.cpp	/^CIsamFile::CIsamFile(string strData, string strIndex)$/;"	f	class:CIsamFile
+CIsamFile	IsamFile.h	/^class CIsamFile : public CFileEngine$/;"	c
+CLink4SEFile	Link4SEFile.cpp	/^CLink4SEFile::CLink4SEFile()$/;"	f	class:CLink4SEFile
+CLink4SEFile	Link4SEFile.cpp	/^CLink4SEFile::CLink4SEFile(string str) : CFileEngine(str)$/;"	f	class:CLink4SEFile
+CLink4SEFile	Link4SEFile.h	/^class CLink4SEFile : public CFileEngine$/;"	c
+CMD5	Md5.cpp	/^CMD5::CMD5()$/;"	f	class:CMD5
+CMD5	Md5.cpp	/^CMD5::CMD5(const char* md5src)$/;"	f	class:CMD5
+CMD5	Md5.cpp	/^CMD5::CMD5(unsigned long* md5src)$/;"	f	class:CMD5
+CMD5	Md5.h	/^class CMD5$/;"	c
+COMMENT	hlink/lex.hlink.c	5580;"	d	file:
+CPage	Page.cpp	/^CPage::CPage( string strUrl, string strLocation, char* header, char* body, int nLenBody)$/;"	f	class:CPage
+CPage	Page.cpp	/^CPage::CPage()$/;"	f	class:CPage
+CPage	Page.h	/^class CPage$/;"	c
+CSearch	Search.cpp	/^CSearch::CSearch()$/;"	f	class:CSearch
+CSearch	Search.h	/^class CSearch$/;"	c
+CStrFun	StrFun.cpp	/^CStrFun::CStrFun()$/;"	f	class:CStrFun
+CStrFun	StrFun.h	/^class CStrFun$/;"	c
+CTianwangFile	TianwangFile.cpp	/^CTianwangFile::CTianwangFile()$/;"	f	class:CTianwangFile
+CTianwangFile	TianwangFile.cpp	/^CTianwangFile::CTianwangFile(string str) : CFileEngine(str)$/;"	f	class:CTianwangFile
+CTianwangFile	TianwangFile.h	/^class CTianwangFile : public CFileEngine$/;"	c
+CUrl	Url.cpp	/^CUrl::CUrl()$/;"	f	class:CUrl
+CUrl	Url.h	/^class CUrl$/;"	c
+C_AUTHORITY	include/uri.h	8;"	d
+C_AUTHORITY	uri/uri.h	8;"	d
+C_FRAGMENT	include/uri.h	15;"	d
+C_FRAGMENT	uri/uri.h	15;"	d
+C_HOST	include/uri.h	10;"	d
+C_HOST	uri/uri.h	10;"	d
+C_PATH	include/uri.h	13;"	d
+C_PATH	uri/uri.h	13;"	d
+C_PORT	include/uri.h	11;"	d
+C_PORT	uri/uri.h	11;"	d
+C_QUERY	include/uri.h	14;"	d
+C_QUERY	uri/uri.h	14;"	d
+C_REG_NAME	include/uri.h	12;"	d
+C_REG_NAME	uri/uri.h	12;"	d
+C_SCHEME	include/uri.h	7;"	d
+C_SCHEME	uri/uri.h	7;"	d
+C_URI	include/uri.h	16;"	d
+C_URI	uri/uri.h	16;"	d
+C_USERINFO	include/uri.h	9;"	d
+C_USERINFO	uri/uri.h	9;"	d
+Close	FileEngine.h	/^	inline void Close() { m_ofsFile.close(); }$/;"	f	class:CFileEngine
+Close	IsamFile.cpp	/^void CIsamFile::Close()$/;"	f	class:CIsamFile
+CreateSocket	Http.cpp	/^int CHttp::CreateSocket(const char *host, int port)$/;"	f	class:CHttp
+DATABASE_ENGINE	DataEngine.h	/^	DATABASE_ENGINE$/;"	e	enum:dataengine_type
+DDOTP	Url.cpp	18;"	d	file:
+DEFAULT_FTP_PORT	Url.h	/^const int DEFAULT_FTP_PORT  = 21;$/;"	v
+DEFAULT_HTTP_PORT	Url.h	/^const int DEFAULT_HTTP_PORT = 80;$/;"	v
+DEFAULT_PAGE_BUF_SIZE	CommonDef.h	/^const int DEFAULT_PAGE_BUF_SIZE = 1024 * 200;      \/* 200K should hold most things *\/$/;"	v
+DEFAULT_TIMEOUT	CommonDef.h	/^const int DEFAULT_TIMEOUT = 30;              \/* Seconds to wait before giving up$/;"	v
+DEFAULT_USER_AGENT	CommonDef.h	6;"	d
+DOTP	Url.cpp	16;"	d	file:
+DOUBLE_QUOTED	hlink/lex.hlink.c	5591;"	d	file:
+DoCrawl	Crawl.cpp	/^void CCrawl::DoCrawl()$/;"	f	class:CCrawl
+DoSearch	Search.cpp	/^void CSearch::DoSearch()$/;"	f	class:CSearch
+DownloadFile	Crawl.cpp	/^void CCrawl::DownloadFile(CTianwangFile *pTianwangFile,$/;"	f	class:CCrawl
+ECHO	hlink/lex.hlink.c	5727;"	d	file:
+ECHO	uri/lex.uri.c	1397;"	d	file:
+ENTITY	hlink/lex.hlink.c	5594;"	d	file:
+EOB_ACT_CONTINUE_SCAN	hlink/lex.hlink.c	122;"	d	file:
+EOB_ACT_CONTINUE_SCAN	uri/lex.uri.c	179;"	d	file:
+EOB_ACT_END_OF_FILE	hlink/lex.hlink.c	123;"	d	file:
+EOB_ACT_END_OF_FILE	uri/lex.uri.c	180;"	d	file:
+EOB_ACT_LAST_MATCH	hlink/lex.hlink.c	124;"	d	file:
+EOB_ACT_LAST_MATCH	uri/lex.uri.c	181;"	d	file:
+EraseStr	StrFun.cpp	/^void CStrFun::EraseStr(string &str , string substr)$/;"	f	class:CStrFun
+F	Md5.cpp	112;"	d	file:
+F	Md5.cpp	114;"	d	file:
+F	Md5.cpp	133;"	d	file:
+F	Md5.cpp	135;"	d	file:
+F	Md5.cpp	154;"	d	file:
+F	Md5.cpp	72;"	d	file:
+F	Md5.cpp	91;"	d	file:
+F	Md5.cpp	93;"	d	file:
+FILE_ENGINE	DataEngine.h	/^	FILE_ENGINE,$/;"	e	enum:dataengine_type
+FLEXINT_H	uri/lex.uri.c	48;"	d	file:
+FLEX_BETA	uri/lex.uri.c	32;"	d	file:
+FLEX_SCANNER	hlink/lex.hlink.c	25;"	d	file:
+FLEX_SCANNER	uri/lex.uri.c	27;"	d	file:
+FRAGMENT	uri/lex.uri.c	1299;"	d	file:
+FREE_NOT_NULL	include/misc.h	21;"	d
+FREE_NOT_NULL	lib/misc.h	21;"	d
+Fetch	Http.cpp	/^int CHttp::Fetch(string strUrl, char **fileBuf, char **fileHeadBuf, char **location, int* nPSock )$/;"	f	class:CHttp
+FindCase	StrFun.cpp	/^string::size_type CStrFun::FindCase(string haystack, string needle)$/;"	f	class:CStrFun
+FindCaseFrom	StrFun.cpp	/^string::size_type CStrFun::FindCaseFrom(string haystack, string needle, int nFrom)$/;"	f	class:CStrFun
+FindKey	Search.cpp	/^int CSearch::FindKey(const char* key)$/;"	f	class:CSearch
+FindRefLink4History	Page.cpp	/^bool CPage::FindRefLink4History()$/;"	f	class:CPage
+FindRefLink4SE	Page.cpp	/^bool CPage::FindRefLink4SE()$/;"	f	class:CPage
+FindUrl	Search.cpp	/^int CSearch::FindUrl(const char *url, char **content)$/;"	f	class:CSearch
+GET_UINT32	Md5.cpp	11;"	d	file:
+GenerateMD5	Md5.cpp	/^void CMD5::GenerateMD5(unsigned char* buffer,int bufferlen)$/;"	f	class:CMD5
+GetCharset	Page.cpp	/^void CPage::GetCharset(string headerBuf)$/;"	f	class:CPage
+GetConnectionState	Page.cpp	/^void CPage::GetConnectionState(string headerBuf)$/;"	f	class:CPage
+GetContentEncoding	Page.cpp	/^void CPage::GetContentEncoding(string headerBuf)$/;"	f	class:CPage
+GetContentLength	Page.cpp	/^void CPage::GetContentLength(string headerBuf)$/;"	f	class:CPage
+GetContentLinkInfo	Page.cpp	/^bool CPage::GetContentLinkInfo()$/;"	f	class:CPage
+GetContentType	Page.cpp	/^void CPage::GetContentType(string headerBuf)$/;"	f	class:CPage
+GetEngineType	DatabaseEngine.h	/^	int GetEngineType() { return DATABASE_ENGINE; }$/;"	f	class:CDatabaseEngine
+GetEngineType	FileEngine.h	/^	int GetEngineType() { return FILE_ENGINE; }$/;"	f	class:CFileEngine
+GetFileType	IsamFile.h	/^	int GetFileType() { return ISAM; }$/;"	f	class:CIsamFile
+GetFileType	Link4SEFile.h	/^	inline int GetFileType() { return LINK4SE; }$/;"	f	class:CLink4SEFile
+GetFileType	TianwangFile.h	/^	inline int GetFileType() { return TIANWANG; }$/;"	f	class:CTianwangFile
+GetIpBlock	Crawl.cpp	/^void CCrawl::GetIpBlock()$/;"	f	class:CCrawl
+GetIpByHost	Url.cpp	/^char * CUrl::GetIpByHost(const char *host)$/;"	f	class:CUrl
+GetLinkInfo4History	Page.cpp	/^bool CPage::GetLinkInfo4History()$/;"	f	class:CPage
+GetLinkInfo4SE	Page.cpp	/^bool CPage::GetLinkInfo4SE()$/;"	f	class:CPage
+GetLocation	Page.cpp	/^void CPage::GetLocation(string headerBuf)$/;"	f	class:CPage
+GetStatusCode	Page.cpp	/^void CPage::GetStatusCode(string headerBuf)$/;"	f	class:CPage
+GetTransferEncoding	Page.cpp	/^void CPage::GetTransferEncoding(string headerBuf)$/;"	f	class:CPage
+GetUnreachHostMD5	Crawl.cpp	/^void CCrawl::GetUnreachHostMD5()$/;"	f	class:CCrawl
+GetVisitedPageMD5	Crawl.cpp	/^void CCrawl::GetVisitedPageMD5()$/;"	f	class:CCrawl
+GetVisitedUrlMD5	Crawl.cpp	/^void CCrawl::GetVisitedUrlMD5()$/;"	f	class:CCrawl
+HEADER_BUF_SIZE	CommonDef.h	/^const int HEADER_BUF_SIZE = 1024;$/;"	v
+HLINK_ISBLANK	hlink/lex.hlink.c	5604;"	d	file:
+HLinkDetect	hlink/lex.hlink.c	/^int HLinkDetect(istream *PageFile, const struct uri *PageURI,$/;"	f
+HOST	uri/lex.uri.c	1293;"	d	file:
+HOST_LEN	Url.h	/^const unsigned int HOST_LEN	= 256;$/;"	v
+HTTP_VERSION	CommonDef.h	5;"	d
+IGNORE	hlink/lex.hlink.c	5584;"	d	file:
+IGNORE_ALL	hlink/lex.hlink.c	5583;"	d	file:
+IGNORE_DOUBLE_QUOTED	hlink/lex.hlink.c	5585;"	d	file:
+IGNORE_SINGLE_QUOTED	hlink/lex.hlink.c	5587;"	d	file:
+IGNORE_UNQUOTED	hlink/lex.hlink.c	5588;"	d	file:
+INITIAL	hlink/lex.hlink.c	5574;"	d	file:
+INITIAL	uri/lex.uri.c	1288;"	d	file:
+INIT_LIST_HEAD	include/list.h	23;"	d
+INIT_LIST_HEAD	lib/list.h	23;"	d
+INT16_MAX	uri/lex.uri.c	90;"	d	file:
+INT16_MIN	uri/lex.uri.c	81;"	d	file:
+INT32_MAX	uri/lex.uri.c	93;"	d	file:
+INT32_MIN	uri/lex.uri.c	84;"	d	file:
+INT8_MAX	uri/lex.uri.c	87;"	d	file:
+INT8_MIN	uri/lex.uri.c	78;"	d	file:
+ISAM	FileEngine.h	/^	ISAM,$/;"	e	enum:fileengine_type
+IsFilterLink	Page.cpp	/^bool CPage::IsFilterLink(string plink)$/;"	f	class:CPage
+IsFilterLink	tfind.cpp	/^bool IsFilterLink(string plink)$/;"	f
+IsForeignHost	Url.cpp	/^bool CUrl::IsForeignHost(string host)$/;"	f	class:CUrl
+IsImageUrl	Url.cpp	/^bool CUrl::IsImageUrl(string url)$/;"	f	class:CUrl
+IsValidHost	Url.cpp	/^bool CUrl::IsValidHost(const char *host)$/;"	f	class:CUrl
+IsValidHostChar	Url.cpp	/^bool CUrl::IsValidHostChar(char ch)$/;"	f	class:CUrl
+IsValidIp	Url.cpp	/^bool CUrl::IsValidIp(const char *ip)$/;"	f	class:CUrl
+IsVisitedUrl	Url.cpp	/^bool CUrl::IsVisitedUrl(const char *url)$/;"	f	class:CUrl
+LINK4SE	FileEngine.h	/^	LINK4SE$/;"	e	enum:fileengine_type
+LIST_HEAD	include/list.h	20;"	d
+LIST_HEAD	lib/list.h	20;"	d
+LIST_HEAD_INIT	include/list.h	18;"	d
+LIST_HEAD_INIT	lib/list.h	18;"	d
+MAX	include/misc.h	27;"	d
+MAX	lib/misc.h	27;"	d
+MAXDIR	Res.cpp	11;"	d	file:
+MAX_PAGE_BUF_SIZE	CommonDef.h	/^const int MAX_PAGE_BUF_SIZE = 5 * 1024 * 1024;      \/* 5MB is up limit *\/$/;"	v
+MAX_TAG_NUMBERS	Page.h	/^const int MAX_TAG_NUMBERS	= 10000;$/;"	v
+MAX_URL_REFERENCES	Page.h	/^const int MAX_URL_REFERENCES    = 1000;$/;"	v
+MEMCPY_PLUS	include/misc.h	15;"	d
+MEMCPY_PLUS	lib/misc.h	15;"	d
+MEMCPY_PLUS_PLUS	include/misc.h	5;"	d
+MEMCPY_PLUS_PLUS	lib/misc.h	5;"	d
+MIN	include/misc.h	26;"	d
+MIN	lib/misc.h	26;"	d
+NUM_WORKERS	Tse.h	/^const unsigned int NUM_WORKERS		= 10;$/;"	v
+NUM_WORKERS_ON_A_SITE	Tse.h	/^const unsigned int NUM_WORKERS_ON_A_SITE = 4;$/;"	v
+NormalizeUrl	Page.cpp	/^bool CPage::NormalizeUrl(string& strUrl)$/;"	f	class:CPage
+OPAQUE_PART	uri/lex.uri.c	1297;"	d	file:
+OTHER	Page.h	/^	OTHER	$/;"	e	enum:page_type
+Open	FileEngine.cpp	/^bool CFileEngine::Open(string str)$/;"	f	class:CFileEngine
+Open	IsamFile.cpp	/^bool CIsamFile::Open(string strData, string strIndex)$/;"	f	class:CIsamFile
+Open	IsamFile.h	/^	bool Open(string str) { return false; }$/;"	f	class:CIsamFile
+OpenFilesForOutput	Crawl.cpp	/^void CCrawl::OpenFilesForOutput()$/;"	f	class:CCrawl
+P	Md5.cpp	62;"	d	file:
+PLAIN_TEXT	Page.h	/^	PLAIN_TEXT,$/;"	e	enum:page_type
+PORT	uri/lex.uri.c	1294;"	d	file:
+PORT_NUMBER	CommonDef.h	/^const int PORT_NUMBER = 80;$/;"	v
+PUT_UINT32	Md5.cpp	19;"	d	file:
+ParseHeaderInfo	Page.cpp	/^void CPage::ParseHeaderInfo(string strHeader)$/;"	f	class:CPage
+ParseHyperLinks	Page.cpp	/^bool CPage::ParseHyperLinks()$/;"	f	class:CPage
+ParseRobot	Res.cpp	/^char **ParseRobot( char *data, char len)$/;"	f
+ParseScheme	Url.cpp	/^void CUrl::ParseScheme (const char *url)$/;"	f	class:CUrl
+ParseUrlEx	Url.cpp	/^bool CUrl::ParseUrlEx(string strUrl)$/;"	f	class:CUrl
+ParseUrlEx	Url.cpp	/^void CUrl::ParseUrlEx(const char *url,$/;"	f	class:CUrl
+QUERY	uri/lex.uri.c	1298;"	d	file:
+REG_NAME	uri/lex.uri.c	1295;"	d	file:
+REJECT	hlink/lex.hlink.c	5559;"	d	file:
+REJECT	uri/lex.uri.c	1211;"	d	file:
+REL_PATH	uri/lex.uri.c	1290;"	d	file:
+REQUEST_BUF_SIZE	CommonDef.h	/^const int REQUEST_BUF_SIZE = 1024;$/;"	v
+RefLink4History	Page.h	/^struct RefLink4History	\/\/ <img src...>,<script src...>$/;"	s
+RefLink4SE	Page.h	/^struct RefLink4SE	\/\/ <href src...>, <area src...>$/;"	s
+ReplaceStr	StrFun.cpp	/^void CStrFun::ReplaceStr(string&str,string srstr,string dsstr)$/;"	f	class:CStrFun
+S	Md5.cpp	60;"	d	file:
+SCHEME	uri/lex.uri.c	1289;"	d	file:
+SCHEME_FTP	Url.h	/^	SCHEME_FTP,$/;"	e	enum:url_scheme
+SCHEME_HTTP	Url.h	/^	SCHEME_HTTP,$/;"	e	enum:url_scheme
+SCHEME_INVALID	Url.h	/^	SCHEME_INVALID$/;"	e	enum:url_scheme
+SCRIPT	hlink/lex.hlink.c	5581;"	d	file:
+SINGLE_QUOTED	hlink/lex.hlink.c	5593;"	d	file:
+STACK_INITIAL_SIZE	include/stack.h	4;"	d
+STACK_INITIAL_SIZE	lib/stack.h	4;"	d
+STACK_INITIAL_SIZE	stack/stack.h	4;"	d
+SaveIsamRawData	Crawl.cpp	/^void CCrawl::SaveIsamRawData(CUrl *pUrl, CPage *pPage)$/;"	f	class:CCrawl
+SaveLink4History	Crawl.cpp	/^void CCrawl::SaveLink4History(CPage *iPage)$/;"	f	class:CCrawl
+SaveLink4SE	Crawl.cpp	/^void CCrawl::SaveLink4SE(CPage *iPage)$/;"	f	class:CCrawl
+SaveLink4SE031121	Crawl.cpp	/^bool CCrawl::SaveLink4SE031121(void  *arg)$/;"	f	class:CCrawl
+SaveLink4SERawData	Crawl.cpp	/^void CCrawl::SaveLink4SERawData(CLink4SEFile *pLink4SEFile,$/;"	f	class:CCrawl
+SaveReplicas	Crawl.cpp	/^SaveReplicas(const char* filename)$/;"	f
+SaveTianwangRawData	Crawl.cpp	/^void CCrawl::SaveTianwangRawData(CTianwangFile *pTianwangFile,$/;"	f	class:CCrawl
+SaveUnreachHost	Crawl.cpp	/^void CCrawl::SaveUnreachHost(string host)$/;"	f	class:CCrawl
+SaveUnvisitedUrl	Crawl.cpp	/^void SaveUnvisitedUrl()$/;"	f
+SaveVisitedPageMD5	Crawl.cpp	/^void CCrawl::SaveVisitedPageMD5(string md5)$/;"	f	class:CCrawl
+SaveVisitedUrl	Crawl.cpp	/^void CCrawl::SaveVisitedUrl(string url)$/;"	f	class:CCrawl
+SaveVisitedUrlMD5	Crawl.cpp	/^void CCrawl::SaveVisitedUrlMD5(string md5)$/;"	f	class:CCrawl
+SigTerm	Crawl.cpp	/^static void SigTerm(int x)$/;"	f	file:
+Str2Lower	StrFun.cpp	/^void CStrFun::Str2Lower(string& str, int nLen)$/;"	f	class:CStrFun
+Str2Lower	tfindForeign.cpp	/^void Str2Lower(string& str, int nLen)$/;"	f
+TIANWANG	FileEngine.h	/^	TIANWANG,$/;"	e	enum:fileengine_type
+TOPDIR	Makefile	/^TOPDIR = $(shell pwd)$/;"	m
+TOPDIR	hlink/Makefile	/^TOPDIR = $(shell cd ..; pwd)$/;"	m
+TOPDIR	lib/Makefile	/^TOPDIR = $(shell cd ..; pwd)$/;"	m
+TOPDIR	stack/Makefile	/^TOPDIR = $(shell cd ..; pwd)$/;"	m
+TOPDIR	uri/Makefile	/^TOPDIR = $(shell cd ..; pwd)$/;"	m
+ToString	Md5.cpp	/^string CMD5::ToString()$/;"	f	class:CMD5
+UINT16_MAX	uri/lex.uri.c	99;"	d	file:
+UINT32_MAX	uri/lex.uri.c	102;"	d	file:
+UINT8_MAX	uri/lex.uri.c	96;"	d	file:
+UNQUOTED	hlink/lex.hlink.c	5590;"	d	file:
+URI	hlink/lex.hlink.c	5589;"	d	file:
+URI_INIT	uri/lex.uri.c	1237;"	d	file:
+URI_LEN_MAX	hlink/lex.hlink.c	5603;"	d	file:
+URL_LEN	Url.h	/^const unsigned int URL_LEN	= 256;$/;"	v
+URL_LEN	tfind.cpp	/^const unsigned int URL_LEN=256;$/;"	v
+URL_REFERENCE_LEN	Page.h	/^const int URL_REFERENCE_LEN     = (URL_LEN+ANCHOR_TEXT_LEN)*MAX_URL_REFERENCES*1\/2 ;$/;"	v
+USERINFO	uri/lex.uri.c	1292;"	d	file:
+USER_AGENT	Res.cpp	12;"	d	file:
+VERSION	CommonDef.h	7;"	d
+Write	IsamFile.cpp	/^bool CIsamFile::Write(void *arg)$/;"	f	class:CIsamFile
+Write	Link4SEFile.cpp	/^bool CLink4SEFile::Write(void * arg)$/;"	f	class:CLink4SEFile
+Write	TianwangFile.cpp	/^bool CTianwangFile::Write(void * arg)$/;"	f	class:CTianwangFile
+YYSTATE	hlink/lex.hlink.c	104;"	d	file:
+YYSTATE	uri/lex.uri.c	151;"	d	file:
+YYTABLES_NAME	uri/lex.uri.c	3040;"	d	file:
+YY_AT_BOL	hlink/lex.hlink.c	280;"	d	file:
+YY_AT_BOL	uri/lex.uri.c	350;"	d	file:
+YY_BREAK	hlink/lex.hlink.c	5786;"	d	file:
+YY_BREAK	uri/lex.uri.c	1476;"	d	file:
+YY_BUFFER_EOF_PENDING	hlink/lex.hlink.c	216;"	d	file:
+YY_BUFFER_EOF_PENDING	uri/lex.uri.c	266;"	d	file:
+YY_BUFFER_NEW	hlink/lex.hlink.c	204;"	d	file:
+YY_BUFFER_NEW	uri/lex.uri.c	254;"	d	file:
+YY_BUFFER_NORMAL	hlink/lex.hlink.c	205;"	d	file:
+YY_BUFFER_NORMAL	uri/lex.uri.c	255;"	d	file:
+YY_BUFFER_STATE	hlink/lex.hlink.c	/^typedef struct yy_buffer_state *YY_BUFFER_STATE;$/;"	t	typeref:struct:yy_buffer_state	file:
+YY_BUFFER_STATE	uri/lex.uri.c	/^typedef struct yy_buffer_state *YY_BUFFER_STATE;$/;"	t	typeref:struct:yy_buffer_state	file:
+YY_BUF_SIZE	hlink/lex.hlink.c	115;"	d	file:
+YY_BUF_SIZE	uri/lex.uri.c	163;"	d	file:
+YY_CHAR	hlink/lex.hlink.c	/^typedef unsigned char YY_CHAR;$/;"	t	file:
+YY_CHAR	uri/lex.uri.c	/^typedef unsigned char YY_CHAR;$/;"	t	file:
+YY_CURRENT_BUFFER	hlink/lex.hlink.c	225;"	d	file:
+YY_CURRENT_BUFFER	uri/lex.uri.c	282;"	d	file:
+YY_CURRENT_BUFFER_LVALUE	uri/lex.uri.c	289;"	d	file:
+YY_DECL	hlink/lex.hlink.c	5774;"	d	file:
+YY_DECL	uri/lex.uri.c	1464;"	d	file:
+YY_DECL_IS_OURS	uri/lex.uri.c	1460;"	d	file:
+YY_DO_BEFORE_ACTION	hlink/lex.hlink.c	298;"	d	file:
+YY_DO_BEFORE_ACTION	uri/lex.uri.c	375;"	d	file:
+YY_END_OF_BUFFER	hlink/lex.hlink.c	306;"	d	file:
+YY_END_OF_BUFFER	uri/lex.uri.c	383;"	d	file:
+YY_END_OF_BUFFER_CHAR	hlink/lex.hlink.c	112;"	d	file:
+YY_END_OF_BUFFER_CHAR	uri/lex.uri.c	159;"	d	file:
+YY_EXIT_FAILURE	hlink/lex.hlink.c	7067;"	d	file:
+YY_EXIT_FAILURE	uri/lex.uri.c	2830;"	d	file:
+YY_EXTRA_TYPE	uri/lex.uri.c	1311;"	d	file:
+YY_FATAL_ERROR	hlink/lex.hlink.c	5767;"	d	file:
+YY_FATAL_ERROR	uri/lex.uri.c	1451;"	d	file:
+YY_FLEX_MAJOR_VERSION	hlink/lex.hlink.c	26;"	d	file:
+YY_FLEX_MAJOR_VERSION	uri/lex.uri.c	28;"	d	file:
+YY_FLEX_MINOR_VERSION	hlink/lex.hlink.c	27;"	d	file:
+YY_FLEX_MINOR_VERSION	uri/lex.uri.c	29;"	d	file:
+YY_FLEX_SUBMINOR_VERSION	uri/lex.uri.c	30;"	d	file:
+YY_FLUSH_BUFFER	hlink/lex.hlink.c	254;"	d	file:
+YY_FLUSH_BUFFER	uri/lex.uri.c	318;"	d	file:
+YY_INPUT	hlink/lex.hlink.c	5734;"	d	file:
+YY_INPUT	uri/lex.uri.c	1404;"	d	file:
+YY_INT_ALIGNED	uri/lex.uri.c	4;"	d	file:
+YY_LESS_LINENO	uri/lex.uri.c	183;"	d	file:
+YY_MORE_ADJ	hlink/lex.hlink.c	5570;"	d	file:
+YY_MORE_ADJ	uri/lex.uri.c	1213;"	d	file:
+YY_NEW_FILE	hlink/lex.hlink.c	110;"	d	file:
+YY_NEW_FILE	uri/lex.uri.c	157;"	d	file:
+YY_NO_POP_STATE	hlink/lex.hlink.c	5697;"	d	file:
+YY_NO_PUSH_STATE	hlink/lex.hlink.c	5696;"	d	file:
+YY_NO_TOP_STATE	hlink/lex.hlink.c	5698;"	d	file:
+YY_NULL	hlink/lex.hlink.c	84;"	d	file:
+YY_NULL	uri/lex.uri.c	131;"	d	file:
+YY_NUM_RULES	hlink/lex.hlink.c	305;"	d	file:
+YY_NUM_RULES	uri/lex.uri.c	382;"	d	file:
+YY_PROTO	hlink/lex.hlink.c	78;"	d	file:
+YY_PROTO	hlink/lex.hlink.c	80;"	d	file:
+YY_READ_BUF_SIZE	hlink/lex.hlink.c	5718;"	d	file:
+YY_READ_BUF_SIZE	uri/lex.uri.c	1389;"	d	file:
+YY_RESTORE_YY_MORE_OFFSET	hlink/lex.hlink.c	5571;"	d	file:
+YY_RESTORE_YY_MORE_OFFSET	uri/lex.uri.c	1214;"	d	file:
+YY_RULE_SETUP	hlink/lex.hlink.c	5789;"	d	file:
+YY_RULE_SETUP	uri/lex.uri.c	1479;"	d	file:
+YY_SC_TO_UI	hlink/lex.hlink.c	91;"	d	file:
+YY_SC_TO_UI	uri/lex.uri.c	138;"	d	file:
+YY_STACK_USED	hlink/lex.hlink.c	5579;"	d	file:
+YY_START	hlink/lex.hlink.c	103;"	d	file:
+YY_START	uri/lex.uri.c	150;"	d	file:
+YY_START_STACK_INCR	hlink/lex.hlink.c	5762;"	d	file:
+YY_START_STACK_INCR	uri/lex.uri.c	1446;"	d	file:
+YY_STATE_BUF_SIZE	uri/lex.uri.c	168;"	d	file:
+YY_STATE_EOF	hlink/lex.hlink.c	107;"	d	file:
+YY_STATE_EOF	uri/lex.uri.c	154;"	d	file:
+YY_STRUCT_YY_BUFFER_STATE	uri/lex.uri.c	207;"	d	file:
+YY_TRAILING_HEAD_MASK	hlink/lex.hlink.c	5558;"	d	file:
+YY_TRAILING_MASK	hlink/lex.hlink.c	5557;"	d	file:
+YY_TYPEDEF_YY_BUFFER_STATE	uri/lex.uri.c	171;"	d	file:
+YY_TYPEDEF_YY_SIZE_T	uri/lex.uri.c	202;"	d	file:
+YY_USER_ACTION	hlink/lex.hlink.c	5781;"	d	file:
+YY_USER_ACTION	uri/lex.uri.c	1471;"	d	file:
+YY_USES_REJECT	hlink/lex.hlink.c	283;"	d	file:
+YY_USE_CONST	hlink/lex.hlink.c	49;"	d	file:
+YY_USE_CONST	hlink/lex.hlink.c	56;"	d	file:
+YY_USE_CONST	hlink/lex.hlink.c	66;"	d	file:
+YY_USE_CONST	uri/lex.uri.c	112;"	d	file:
+YY_USE_CONST	uri/lex.uri.c	119;"	d	file:
+YY_USE_PROTOS	hlink/lex.hlink.c	46;"	d	file:
+YY_USE_PROTOS	hlink/lex.hlink.c	55;"	d	file:
+YY_USE_PROTOS	hlink/lex.hlink.c	67;"	d	file:
+_ALGORITHM_	Tse.h	135;"	d
+_CASSERT_	Tse.h	176;"	d
+_CCTYPE_	Tse.h	140;"	d
+_COMMON_DEF_H_0300717_	CommonDef.h	2;"	d
+_CSTDLIB_	Tse.h	54;"	d
+_CSTRING_	Tse.h	59;"	d
+_CTIME_	Tse.h	130;"	d
+_Crawl_H_031104_	Crawl.h	2;"	d
+_DATABASE_ENGINE_H_031104_	DatabaseEngine.h	2;"	d
+_DATA_ENGINE_H_031104	DataEngine.h	2;"	d
+_DEQUE_	Tse.h	161;"	d
+_DIRENT_H_	Tse.h	64;"	d
+_ERROR_H_	Tse.h	105;"	d
+_FILE_ENGINE_H_031104_	FileEngine.h	2;"	d
+_FSTREAM_	Tse.h	39;"	d
+_FTW_H_	Tse.h	89;"	d
+_HLINK_H_	hlink/hlink.h	2;"	d
+_HLINK_H_	include/hlink.h	2;"	d
+_HTTP_H_031105_	Http.h	2;"	d
+_INET_H_	Tse.h	196;"	d
+_IN_H_	Tse.h	191;"	d
+_IOMANIP_	Tse.h	120;"	d
+_IOSTREAM_	Tse.h	34;"	d
+_ISAM_FILE_H_031105_	IsamFile.h	2;"	d
+_ITERATOR_	Tse.h	151;"	d
+_LINK4SE_FILE_H_031208_	Link4SEFile.h	2;"	d
+_LIST_	Tse.h	156;"	d
+_LIST_	Tse.h	94;"	d
+_LIST_H_	include/list.h	2;"	d
+_LIST_H_	lib/list.h	2;"	d
+_MAP_	Tse.h	166;"	d
+_MAP_	Tse.h	99;"	d
+_MD5_H	Md5.h	2;"	d
+_MISC_H_	include/misc.h	2;"	d
+_MISC_H_	lib/misc.h	2;"	d
+_Page_H_030728_	Page.h	2;"	d
+_SEARCH_H_031105_	Search.h	2;"	d
+_SET_	Tse.h	171;"	d
+_SIGNAL_H_	Tse.h	181;"	d
+_SOCKET_H_	Tse.h	186;"	d
+_STACK_H_	include/stack.h	2;"	d
+_STACK_H_	lib/stack.h	2;"	d
+_STACK_H_	stack/stack.h	2;"	d
+_STDIO_H_	Tse.h	44;"	d
+_STDLIB_H_	Tse.h	49;"	d
+_STREAMBUF_	Tse.h	110;"	d
+_STRING_	Tse.h	5;"	d
+_STR_FUN_H_030802	StrFun.h	2;"	d
+_S_DIR_H_	Tse.h	74;"	d
+_S_STAT_H_	Tse.h	84;"	d
+_S_TYPES_H_	Tse.h	79;"	d
+_TIANWANG_FILE_H_031104_	TianwangFile.h	2;"	d
+_TIME_H_	Tse.h	125;"	d
+_TSE_H_030719_	Tse.h	2;"	d
+_UNISTD_H_	Tse.h	69;"	d
+_URI_H_	include/uri.h	2;"	d
+_URI_H_	uri/uri.h	2;"	d
+_URL_H_030728_	Url.h	2;"	d
+_VECTOR_	Tse.h	146;"	d
+__AUTH_DUP	uri/lex.uri.c	3385;"	d	file:
+__AUTH_DUP	uri/lex.uri.c	3462;"	d	file:
+__STDC_LIMIT_MACROS	uri/lex.uri.c	58;"	d	file:
+__STRDUP	uri/lex.uri.c	3366;"	d	file:
+__STRDUP	uri/lex.uri.c	3463;"	d	file:
+__arg	hlink/lex.hlink.c	/^static void *__arg;$/;"	v	file:
+__base_uri	hlink/lex.hlink.c	/^static struct uri *__base_uri;$/;"	v	typeref:struct:uri	file:
+__buffer	hlink/lex.hlink.c	/^static char __buffer[URI_LEN_MAX + 2];$/;"	v	file:
+__char2hex	uri/lex.uri.c	/^char __char2hex[] = "0123456789ABCDEF";$/;"	v
+__cplusplus	hlink/lex.hlink.c	36;"	d	file:
+__cur_attr	hlink/lex.hlink.c	/^static char *__cur_attr;$/;"	v	file:
+__cur_elem	hlink/lex.hlink.c	/^static const struct __elem *__cur_elem;$/;"	v	typeref:struct:__elem	file:
+__curpos	hlink/lex.hlink.c	/^static char *__curpos;$/;"	v	file:
+__elem	hlink/lex.hlink.c	/^struct __elem$/;"	s	file:
+__elem_a_attr	hlink/lex.hlink.c	/^static char *__elem_a_attr[] = {"href", NULL};$/;"	v	file:
+__elem_area_attr	hlink/lex.hlink.c	/^static char *__elem_area_attr[] = {"href", NULL};$/;"	v	file:
+__elem_base_attr	hlink/lex.hlink.c	/^static char *__elem_base_attr[] = {"href", NULL};$/;"	v	file:
+__elem_frame_attr	hlink/lex.hlink.c	/^static char *__elem_frame_attr[] = {"src", NULL};$/;"	v	file:
+__elem_iframe_attr	hlink/lex.hlink.c	/^static char *__elem_iframe_attr[] = {"src", NULL};$/;"	v	file:
+__elem_img_attr	hlink/lex.hlink.c	/^static char *__elem_img_attr[] = {"src", NULL};$/;"	v	file:
+__elem_link_attr	hlink/lex.hlink.c	/^static char *__elem_link_attr[] = {"href", NULL};$/;"	v	file:
+__elem_meta_attr	hlink/lex.hlink.c	/^static char *__elem_meta_attr[] = {"http-equiv", "content", NULL};$/;"	v	file:
+__elems	hlink/lex.hlink.c	/^static struct __elem __elems[] = {$/;"	v	typeref:struct:__elem	file:
+__hex2char	uri/lex.uri.c	/^char __hex2char[] = {$/;"	v
+__is_our_base	hlink/lex.hlink.c	/^static int __is_our_base;$/;"	v	file:
+__length	uri/lex.uri.c	/^static int __length;$/;"	v	file:
+__list_add	include/list.h	/^static inline void __list_add(struct list_head *new,$/;"	f
+__list_add	lib/list.h	/^static inline void __list_add(struct list_head *new,$/;"	f
+__list_del	include/list.h	/^static inline void __list_del(struct list_head *prev, struct list_head *next)$/;"	f
+__list_del	lib/list.h	/^static inline void __list_del(struct list_head *prev, struct list_head *next)$/;"	f
+__list_splice	include/list.h	/^static inline void __list_splice(struct list_head *list,$/;"	f
+__list_splice	lib/list.h	/^static inline void __list_splice(struct list_head *list,$/;"	f
+__memtostr	uri/lex.uri.c	/^char *__memtostr(const void *s, int n)$/;"	f
+__onfind	hlink/lex.hlink.c	/^static onfind_t __onfind;$/;"	v	file:
+__path_merge	uri/lex.uri.c	/^int __path_merge(const char *rel_path, const char *base_path, char **result)$/;"	f
+__refresh	hlink/lex.hlink.c	/^static int __refresh;$/;"	v	file:
+__stack	include/stack.h	/^struct __stack$/;"	s
+__stack	lib/stack.h	/^struct __stack$/;"	s
+__stack	stack/stack.h	/^struct __stack$/;"	s
+__stack_expand	lib/stack.c	/^int __stack_expand(unsigned int elem_size, stack_t *stack)$/;"	f
+__stack_expand	stack/stack.c	/^int __stack_expand(unsigned int elem_size, stack_t *stack)$/;"	f
+__uri	uri/lex.uri.c	/^static struct uri *__uri;$/;"	v	typeref:struct:uri	file:
+__uri_chr	uri/lex.uri.c	/^char __uri_chr[] = {$/;"	v
+__uri_length	uri/lex.uri.c	/^static int __uri_length(void)$/;"	f	file:
+__uri_parse	uri/lex.uri.c	/^static int __uri_parse(struct uri *uri)$/;"	f	file:
+_httoi	Md5.cpp	/^int _httoi(const char *value)$/;"	f
+_nocase_compare	StrFun.cpp	/^bool _nocase_compare(char c1, char c2)$/;"	f
+anchor_text	Page.h	/^	char *anchor_text;$/;"	m	struct:RefLink4SE
+attrs	hlink/lex.hlink.c	/^	char **attrs;$/;"	m	struct:__elem	file:
+authority	include/uri.h	/^	struct authority *authority;$/;"	m	struct:uri	typeref:struct:uri::authority
+authority	include/uri.h	/^struct authority$/;"	s
+authority	uri/uri.h	/^	struct authority *authority;$/;"	m	struct:uri	typeref:struct:uri::authority
+authority	uri/uri.h	/^struct authority$/;"	s
+b_fOver	Crawl.cpp	/^bool b_fOver;$/;"	v
+base	include/stack.h	/^	char *base;$/;"	m	struct:__stack
+base	lib/stack.h	/^	char *base;$/;"	m	struct:__stack
+base	stack/stack.h	/^	char *base;$/;"	m	struct:__stack
+buffer	Md5.h	/^		uint8 buffer[64];$/;"	m	struct:CMD5::md5_context
+char2hex	include/uri.h	43;"	d
+char2hex	uri/uri.h	43;"	d
+checkBufSize	Http.cpp	/^int CHttp::checkBufSize(char **buf, int *bufsize, int more)$/;"	f	class:CHttp
+crawl	Crawl.cpp	/^	CCrawl *crawl;$/;"	m	struct:package	file:
+dataengine_type	DataEngine.h	/^enum dataengine_type$/;"	g
+default_port	Url.cpp	/^	int default_port;$/;"	m	struct:scheme_data	file:
+enabled	Url.cpp	/^	int enabled;$/;"	m	struct:scheme_data	file:
+end	include/stack.h	/^	char *end;$/;"	m	struct:__stack
+end	lib/stack.h	/^	char *end;$/;"	m	struct:__stack
+end	stack/stack.h	/^	char *end;$/;"	m	struct:__stack
+fetch	Crawl.cpp	/^void CCrawl::fetch(void *arg)$/;"	f	class:CCrawl
+file_arg	FileEngine.h	/^struct file_arg$/;"	s
+fileengine_type	FileEngine.h	/^enum fileengine_type$/;"	g
+flex_int16_t	uri/lex.uri.c	/^typedef int16_t flex_int16_t;$/;"	t	file:
+flex_int16_t	uri/lex.uri.c	/^typedef short int flex_int16_t;$/;"	t	file:
+flex_int32_t	uri/lex.uri.c	/^typedef int flex_int32_t;$/;"	t	file:
+flex_int32_t	uri/lex.uri.c	/^typedef int32_t flex_int32_t;$/;"	t	file:
+flex_int8_t	uri/lex.uri.c	/^typedef int8_t flex_int8_t;$/;"	t	file:
+flex_int8_t	uri/lex.uri.c	/^typedef signed char flex_int8_t;$/;"	t	file:
+flex_uint16_t	uri/lex.uri.c	/^typedef uint16_t flex_uint16_t;$/;"	t	file:
+flex_uint16_t	uri/lex.uri.c	/^typedef unsigned short int flex_uint16_t;$/;"	t	file:
+flex_uint32_t	uri/lex.uri.c	/^typedef uint32_t flex_uint32_t;$/;"	t	file:
+flex_uint32_t	uri/lex.uri.c	/^typedef unsigned int flex_uint32_t;$/;"	t	file:
+flex_uint8_t	uri/lex.uri.c	/^typedef uint8_t flex_uint8_t;$/;"	t	file:
+flex_uint8_t	uri/lex.uri.c	/^typedef unsigned char flex_uint8_t; $/;"	t	file:
+fpDataFile	IsamFile.h	/^	FILE *fpDataFile;$/;"	m	class:CIsamFile
+fpIdxFile	IsamFile.h	/^	FILE *fpIdxFile;$/;"	m	class:CIsamFile
+fragment	include/uri.h	/^	char *fragment;$/;"	m	struct:uri
+fragment	uri/uri.h	/^	char *fragment;$/;"	m	struct:uri
+help	Main.cpp	/^void help()$/;"	f
+hex2char	include/uri.h	42;"	d
+hex2char	uri/uri.h	42;"	d
+hideUserAgent	Http.cpp	/^int hideUserAgent = 0;$/;"	v
+hlink_detect	hlink/lex.hlink.c	/^int hlink_detect(FILE *pg_file, const struct uri *pg_uri,$/;"	f
+hlink_detect_string	hlink/lex.hlink.c	/^int hlink_detect_string(const char *string, const struct uri *pg_uri,$/;"	f
+host	include/uri.h	/^			char *host;$/;"	m	struct:authority::__anon1::__anon2
+host	uri/uri.h	/^			char *host;$/;"	m	struct:authority::__anon3::__anon4
+is_uri_chr	include/uri.h	45;"	d
+is_uri_chr	uri/uri.h	45;"	d
+itos	StrFun.h	/^	static string itos(long long i){$/;"	f	class:CStrFun
+leading_string	Url.cpp	/^	char *leading_string;$/;"	m	struct:scheme_data	file:
+link	Page.h	/^	char *link;$/;"	m	struct:RefLink4History
+link	Page.h	/^	char *link;$/;"	m	struct:RefLink4SE
+list_add	include/list.h	/^static inline void list_add(struct list_head *new, struct list_head *head)$/;"	f
+list_add	lib/list.h	/^static inline void list_add(struct list_head *new, struct list_head *head)$/;"	f
+list_add_tail	include/list.h	/^static inline void list_add_tail(struct list_head *new, struct list_head *head)$/;"	f
+list_add_tail	lib/list.h	/^static inline void list_add_tail(struct list_head *new, struct list_head *head)$/;"	f
+list_del	include/list.h	/^static inline void list_del(struct list_head *entry)$/;"	f
+list_del	lib/list.h	/^static inline void list_del(struct list_head *entry)$/;"	f
+list_del_init	include/list.h	/^static inline void list_del_init(struct list_head *entry)$/;"	f
+list_del_init	lib/list.h	/^static inline void list_del_init(struct list_head *entry)$/;"	f
+list_empty	include/list.h	/^static inline int list_empty(struct list_head *head)$/;"	f
+list_empty	lib/list.h	/^static inline int list_empty(struct list_head *head)$/;"	f
+list_entry	include/list.h	189;"	d
+list_entry	lib/list.h	189;"	d
+list_for_each	include/list.h	197;"	d
+list_for_each	lib/list.h	197;"	d
+list_for_each_entry	include/list.h	224;"	d
+list_for_each_entry	lib/list.h	224;"	d
+list_for_each_prev	include/list.h	205;"	d
+list_for_each_prev	lib/list.h	205;"	d
+list_for_each_safe	include/list.h	214;"	d
+list_for_each_safe	lib/list.h	214;"	d
+list_head	include/list.h	/^typedef struct list_head {$/;"	s
+list_head	lib/list.h	/^typedef struct list_head {$/;"	s
+list_move	include/list.h	/^static inline void list_move(struct list_head *list, struct list_head *head)$/;"	f
+list_move	lib/list.h	/^static inline void list_move(struct list_head *list, struct list_head *head)$/;"	f
+list_move_tail	include/list.h	/^static inline void list_move_tail(struct list_head *list,$/;"	f
+list_move_tail	lib/list.h	/^static inline void list_move_tail(struct list_head *list,$/;"	f
+list_splice	include/list.h	/^static inline void list_splice(struct list_head *list, struct list_head *head)$/;"	f
+list_splice	lib/list.h	/^static inline void list_splice(struct list_head *list, struct list_head *head)$/;"	f
+list_splice_init	include/list.h	/^static inline void list_splice_init(struct list_head *list,$/;"	f
+list_splice_init	lib/list.h	/^static inline void list_splice_init(struct list_head *list,$/;"	f
+list_t	include/list.h	/^} list_t;$/;"	t	typeref:struct:list_head
+list_t	lib/list.h	/^} list_t;$/;"	t	typeref:struct:list_head
+m_RefLink4History	Page.h	/^	RefLink4History m_RefLink4History[MAX_URL_REFERENCES\/2];$/;"	m	class:CPage
+m_RefLink4SE	Page.h	/^	RefLink4SE m_RefLink4SE[MAX_URL_REFERENCES];$/;"	m	class:CPage
+m_bConnectionState	Page.h	/^	bool m_bConnectionState;	\/\/ if "Connection: close" false, otherwise true$/;"	m	class:CPage
+m_data	Md5.h	/^	unsigned long m_data[4];$/;"	m	class:CMD5
+m_eScheme	Url.h	/^	enum url_scheme m_eScheme;	\/\/ URL scheme$/;"	m	class:CUrl	typeref:enum:CUrl::url_scheme
+m_eType	Page.h	/^	enum page_type m_eType;$/;"	m	class:CPage	typeref:enum:CPage::page_type
+m_isamFile	Crawl.h	/^	CIsamFile m_isamFile;		\/\/ ISAM file handle$/;"	m	class:CCrawl
+m_mapLink4SE	Page.h	/^	map<string,string> m_mapLink4SE;$/;"	m	class:CPage
+m_nContentLength	Page.h	/^	int m_nContentLength;$/;"	m	class:CPage
+m_nLenContent	Page.h	/^	int m_nLenContent;$/;"	m	class:CPage
+m_nLenHeader	Page.h	/^	int m_nLenHeader;$/;"	m	class:CPage
+m_nLenLinkInfo4History	Page.h	/^	int m_nLenLinkInfo4History;$/;"	m	class:CPage
+m_nLenLinkInfo4SE	Page.h	/^	int m_nLenLinkInfo4SE;$/;"	m	class:CPage
+m_nPort	Url.h	/^	int	m_nPort;		\/\/ Port number$/;"	m	class:CUrl
+m_nRefLink4HistoryNum	Page.h	/^	int m_nRefLink4HistoryNum;$/;"	m	class:CPage
+m_nRefLink4SENum	Page.h	/^	int m_nRefLink4SENum;$/;"	m	class:CPage
+m_nStatusCode	Page.h	/^	int m_nStatusCode;$/;"	m	class:CPage
+m_ofsFile	FileEngine.h	/^	ofstream m_ofsFile;$/;"	m	class:CFileEngine
+m_ofsLink4HistoryFile	Crawl.h	/^	ofstream m_ofsLink4HistoryFile;	\/\/ link4History url file handle$/;"	m	class:CCrawl
+m_ofsLink4SEFile	Crawl.h	/^	ofstream m_ofsLink4SEFile;	\/\/ link4SE url file handle$/;"	m	class:CCrawl
+m_ofsUnreachHostFile	Crawl.h	/^	ofstream m_ofsUnreachHostFile;	\/\/ unreach host file handle$/;"	m	class:CCrawl
+m_ofsUnreachUrlFile	Crawl.h	/^	ofstream m_ofsUnreachUrlFile;	\/\/ unreach URL file handle$/;"	m	class:CCrawl
+m_ofsVisitedPageMD5File	Crawl.h	/^	ofstream m_ofsVisitedPageMD5File;\/\/ visited url MD5 file handle$/;"	m	class:CCrawl
+m_ofsVisitedUrlFile	Crawl.h	/^	ofstream m_ofsVisitedUrlFile;	\/\/ visited url file handle$/;"	m	class:CCrawl
+m_ofsVisitedUrlMD5File	Crawl.h	/^	ofstream m_ofsVisitedUrlMD5File;\/\/ visited url MD5 file handle$/;"	m	class:CCrawl
+m_sCharset	Page.h	/^	string m_sCharset;$/;"	m	class:CPage
+m_sContent	Page.h	/^	string m_sContent;$/;"	m	class:CPage
+m_sContentEncoding	Page.h	/^	string m_sContentEncoding;$/;"	m	class:CPage
+m_sContentLinkInfo	Page.h	/^	string m_sContentLinkInfo;$/;"	m	class:CPage
+m_sContentNoTags	Page.h	/^	string m_sContentNoTags;$/;"	m	class:CPage
+m_sContentType	Page.h	/^	string m_sContentType;$/;"	m	class:CPage
+m_sHeader	Page.h	/^	string m_sHeader;$/;"	m	class:CPage
+m_sHost	Url.h	/^	string	m_sHost;		\/\/ Extracted hostname $/;"	m	class:CUrl
+m_sIndexFileName	IsamFile.h	/^	string m_sIndexFileName;$/;"	m	class:CIsamFile
+m_sInputFileName	Crawl.h	/^	string m_sInputFileName;	\/\/ seed URL file name$/;"	m	class:CCrawl
+m_sLinkInfo4History	Page.h	/^	string m_sLinkInfo4History;$/;"	m	class:CPage
+m_sLinkInfo4SE	Page.h	/^	string m_sLinkInfo4SE;$/;"	m	class:CPage
+m_sLocation	Page.h	/^	string m_sLocation;$/;"	m	class:CPage
+m_sOutputFileName	Crawl.h	/^	string m_sOutputFileName;	\/\/ the file for saving parsed links$/;"	m	class:CCrawl
+m_sPath	Url.h	/^	string	m_sPath;		\/\/ Request$/;"	m	class:CUrl
+m_sTransferEncoding	Page.h	/^	string m_sTransferEncoding;$/;"	m	class:CPage
+m_sUrl	Page.h	/^	string m_sUrl;		$/;"	m	class:CPage
+m_sUrl	Url.h	/^	string m_sUrl;			\/\/ Original URL$/;"	m	class:CUrl
+m_sock	Http.h	/^	int *m_sock;		\/\/ socket$/;"	m	class:CHttp
+m_str	DataEngine.h	/^	string m_str;	\/\/ database engine ---connecting string$/;"	m	class:CDataEngine
+m_strUrl	Http.h	/^	string m_strUrl;	\/\/ url$/;"	m	class:CHttp
+m_vecLink4History	Page.h	/^	vector<string > m_vecLink4History;$/;"	m	class:CPage
+main	Main.cpp	/^int main(int argc, char* argv[])$/;"	f
+main	Stat.cpp	/^int main(int argc, char* argv[])$/;"	f
+main	hlink/lex.hlink.c	/^int main()$/;"	f
+main	tfind.cpp	/^int main()$/;"	f
+main	tfindForeign.cpp	/^int main(int argc, char* argv[])$/;"	f
+mapCacheHostLookup	Url.cpp	/^map<string,string> mapCacheHostLookup;$/;"	v
+mapIpBlock	Crawl.cpp	/^map<unsigned long,unsigned long> mapIpBlock;$/;"	v
+md5_context	Md5.h	/^	struct md5_context$/;"	s	class:CMD5
+md5_finish	Md5.cpp	/^void CMD5::md5_finish( struct md5_context *ctx, uint8 digest[16] )$/;"	f	class:CMD5
+md5_padding	Md5.cpp	/^static uint8 md5_padding[64] =$/;"	v	file:
+md5_process	Md5.cpp	/^void CMD5::md5_process( struct md5_context *ctx, uint8 data[64] )$/;"	f	class:CMD5
+md5_starts	Md5.cpp	/^void CMD5::md5_starts( struct md5_context *ctx )$/;"	f	class:CMD5
+md5_update	Md5.cpp	/^void CMD5::md5_update( struct md5_context *ctx, uint8 *input, uint32 length )$/;"	f	class:CMD5
+mmapUrls	Crawl.cpp	/^multimap<string,string > mmapUrls;$/;"	v
+mutexCacheHost	Url.cpp	/^pthread_mutex_t mutexCacheHost = PTHREAD_MUTEX_INITIALIZER;$/;"	v
+mutexCollection	Crawl.cpp	/^pthread_mutex_t mutexCollection = PTHREAD_MUTEX_INITIALIZER;	\/\/ unvisited urls$/;"	v
+mutexDetect	Crawl.cpp	/^pthread_mutex_t mutexDetect = PTHREAD_MUTEX_INITIALIZER;$/;"	v
+mutexIsamFile	Crawl.cpp	/^pthread_mutex_t mutexIsamFile = PTHREAD_MUTEX_INITIALIZER;$/;"	v
+mutexLink4HistoryFile	Crawl.cpp	/^pthread_mutex_t mutexLink4HistoryFile = PTHREAD_MUTEX_INITIALIZER;$/;"	v
+mutexLink4SEFile	Crawl.cpp	/^pthread_mutex_t mutexLink4SEFile = PTHREAD_MUTEX_INITIALIZER;$/;"	v
+mutexReplicas	Crawl.cpp	/^pthread_mutex_t mutexReplicas = PTHREAD_MUTEX_INITIALIZER;$/;"	v
+mutexUnreachHost	Crawl.cpp	/^pthread_mutex_t mutexUnreachHost = PTHREAD_MUTEX_INITIALIZER;$/;"	v
+mutexUnreachHostFile	Crawl.cpp	/^pthread_mutex_t mutexUnreachHostFile = PTHREAD_MUTEX_INITIALIZER;$/;"	v
+mutexUnvisitedUrlMD5	Crawl.cpp	/^pthread_mutex_t mutexUnvisitedUrlMD5 = PTHREAD_MUTEX_INITIALIZER;$/;"	v
+mutexVisitedPageMD5	Crawl.cpp	/^pthread_mutex_t mutexVisitedPageMD5 = PTHREAD_MUTEX_INITIALIZER;$/;"	v
+mutexVisitedUrlFile	Crawl.cpp	/^pthread_mutex_t mutexVisitedUrlFile = PTHREAD_MUTEX_INITIALIZER;$/;"	v
+mutexVisitedUrlMD5	Crawl.cpp	/^pthread_mutex_t mutexVisitedUrlMD5 = PTHREAD_MUTEX_INITIALIZER;$/;"	v
+mvalType	Crawl.cpp	/^typedef map<string,string>::value_type mvalType;$/;"	t	file:
+my_getline	Res.cpp	/^char *my_getline( char *line, char *data )$/;"	f
+my_getword	Res.cpp	/^char *my_getword( char *word, char *line, char stop)$/;"	f
+mymutex	CommonDef.h	/^pthread_mutex_t mymutex = PTHREAD_MUTEX_INITIALIZER;$/;"	v
+name	hlink/lex.hlink.c	/^	char *name;$/;"	m	struct:__elem	file:
+new	include/list.h	180;"	d
+new	include/list.h	28;"	d
+new	lib/list.h	180;"	d
+new	lib/list.h	28;"	d
+next	include/list.h	/^	struct list_head *next, *prev;$/;"	m	struct:list_head	typeref:struct:list_head::list_head
+next	lib/list.h	/^	struct list_head *next, *prev;$/;"	m	struct:list_head	typeref:struct:list_head::list_head
+nonb_connect	Http.cpp	/^int CHttp::nonb_connect(int sockfd,struct sockaddr* sa,int sec)$/;"	f	class:CHttp
+onfind	Crawl.cpp	/^int onfind(const char *elem, const char *attr, struct uri *uri, void *arg)$/;"	f
+onfind_t	hlink/hlink.h	/^typedef int (*onfind_t)(const char *, const char *, struct uri *, void *);$/;"	t
+onfind_t	include/hlink.h	/^typedef int (*onfind_t)(const char *, const char *, struct uri *, void *);$/;"	t
+operator +	Md5.cpp	/^CMD5 CMD5::operator +(CMD5 adder)$/;"	f	class:CMD5
+operator ==	Md5.cpp	/^bool CMD5::operator ==(CMD5 cmper)$/;"	f	class:CMD5
+pPage	FileEngine.h	/^	CPage *pPage;$/;"	m	struct:file_arg
+pUrl	FileEngine.h	/^	CUrl *pUrl;$/;"	m	struct:file_arg
+package	Crawl.cpp	/^struct package$/;"	s	file:
+page	Crawl.cpp	/^	CPage *page;$/;"	m	struct:package	file:
+page_type	Page.h	/^enum page_type {$/;"	g
+path	include/uri.h	/^	char *path;$/;"	m	struct:uri
+path	uri/uri.h	/^	char *path;$/;"	m	struct:uri
+port	include/uri.h	/^			char *port;$/;"	m	struct:authority::__anon1::__anon2
+port	uri/uri.h	/^			char *port;$/;"	m	struct:authority::__anon3::__anon4
+prev	include/list.h	/^	struct list_head *next, *prev;$/;"	m	struct:list_head	typeref:struct:list_head::
+prev	lib/list.h	/^	struct list_head *next, *prev;$/;"	m	struct:list_head	typeref:struct:list_head::
+query	include/uri.h	/^	char *query;$/;"	m	struct:uri
+query	uri/uri.h	/^	char *query;$/;"	m	struct:uri
+read_header	Http.cpp	/^int CHttp::read_header(int sock, char *headerPtr)$/;"	f	class:CHttp
+reg_name	include/uri.h	/^		char *reg_name;$/;"	m	union:authority::__anon1
+reg_name	uri/uri.h	/^		char *reg_name;$/;"	m	union:authority::__anon3
+replicas	Crawl.cpp	/^multimap<string, string, less<string> > replicas;$/;"	v
+scheme	include/uri.h	/^	char *scheme;$/;"	m	struct:uri
+scheme	uri/uri.h	/^	char *scheme;$/;"	m	struct:uri
+scheme_data	Url.cpp	/^struct scheme_data$/;"	s	file:
+setUnreachHostMD5	Crawl.cpp	/^set<string> setUnreachHostMD5;$/;"	v
+setUnvisitedUrlMD5	Crawl.cpp	/^set<string> setUnvisitedUrlMD5;$/;"	v
+setVisitedPageMD5	Crawl.cpp	/^set<string> setVisitedPageMD5;$/;"	v
+setVisitedUrlMD5	Crawl.cpp	/^set<string> setVisitedUrlMD5;$/;"	v
+stack_create	lib/stack.c	/^stack_t *stack_create(unsigned int init_size)$/;"	f
+stack_create	stack/stack.c	/^stack_t *stack_create(unsigned int init_size)$/;"	f
+stack_destroy	lib/stack.c	/^void stack_destroy(stack_t *stack)$/;"	f
+stack_destroy	stack/stack.c	/^void stack_destroy(stack_t *stack)$/;"	f
+stack_empty	include/stack.h	37;"	d
+stack_empty	lib/stack.h	37;"	d
+stack_empty	stack/stack.h	37;"	d
+stack_height	include/stack.h	36;"	d
+stack_height	lib/stack.h	36;"	d
+stack_height	stack/stack.h	36;"	d
+stack_pop	include/stack.h	25;"	d
+stack_pop	lib/stack.h	25;"	d
+stack_pop	stack/stack.h	25;"	d
+stack_push	include/stack.h	17;"	d
+stack_push	lib/stack.h	17;"	d
+stack_push	stack/stack.h	17;"	d
+stack_t	include/stack.h	/^typedef struct __stack stack_t;$/;"	t	typeref:struct:__stack
+stack_t	lib/stack.h	/^typedef struct __stack stack_t;$/;"	t	typeref:struct:__stack
+stack_t	stack/stack.h	/^typedef struct __stack stack_t;$/;"	t	typeref:struct:__stack
+stack_top	include/stack.h	35;"	d
+stack_top	lib/stack.h	35;"	d
+stack_top	stack/stack.h	35;"	d
+start	Crawl.cpp	/^void* start(void *arg)$/;"	f
+state	Md5.h	/^		uint32 state[4];$/;"	m	struct:CMD5::md5_context
+std	hlink/lex.hlink.c	/^using namespace std;$/;"	v
+strCharset	Page.h	/^	string strCharset;$/;"	m	struct:RefLink4SE
+strdupn	lib/misc.c	/^char *strdupn(const char *string, unsigned int n)$/;"	f
+supported_schemes	Url.cpp	/^static struct scheme_data supported_schemes[] =$/;"	v	typeref:struct:scheme_data	file:
+timeout	Http.cpp	/^int timeout = DEFAULT_TIMEOUT;$/;"	v
+top	include/stack.h	/^	char *top;$/;"	m	struct:__stack
+top	lib/stack.h	/^	char *top;$/;"	m	struct:__stack
+top	stack/stack.h	/^	char *top;$/;"	m	struct:__stack
+total	Md5.h	/^		uint32 total[2];$/;"	m	struct:CMD5::md5_context
+type	include/uri.h	/^	int type;$/;"	m	struct:authority
+type	uri/uri.h	/^	int type;$/;"	m	struct:authority
+uint32	Md5.h	17;"	d
+uint8	Md5.h	16;"	d
+unput	hlink/lex.hlink.c	153;"	d	file:
+unput	uri/lex.uri.c	199;"	d	file:
+uri	include/uri.h	/^struct uri$/;"	s
+uri	uri/uri.h	/^struct uri$/;"	s
+uri_create_buffer	uri/lex.uri.c	/^    YY_BUFFER_STATE uri_create_buffer  (FILE * file, int  size )$/;"	f
+uri_delete_buffer	uri/lex.uri.c	/^    void uri_delete_buffer (YY_BUFFER_STATE  b )$/;"	f
+uri_destroy	uri/lex.uri.c	/^void uri_destroy(struct uri *uri)$/;"	f
+uri_escape	uri/lex.uri.c	/^int uri_escape(const char *bytes, unsigned int len,$/;"	f
+uri_flex_debug	uri/lex.uri.c	/^int uri_flex_debug = 0;$/;"	v
+uri_flush_buffer	uri/lex.uri.c	/^    void uri_flush_buffer (YY_BUFFER_STATE  b )$/;"	f
+uri_init_buffer	uri/lex.uri.c	/^    static void uri_init_buffer  (YY_BUFFER_STATE  b, FILE * file )$/;"	f	file:
+uri_length_buffer	uri/lex.uri.c	/^int uri_length_buffer(char *base, unsigned int size)$/;"	f
+uri_length_bytes	uri/lex.uri.c	/^int uri_length_bytes(const char *bytes, int len)$/;"	f
+uri_length_string	uri/lex.uri.c	/^int uri_length_string(const char *string)$/;"	f
+uri_load_buffer_state	uri/lex.uri.c	/^static void uri_load_buffer_state  (void)$/;"	f	file:
+uri_merge	uri/lex.uri.c	/^int uri_merge(const struct uri *rel_uri, const struct uri *base_uri,$/;"	f
+uri_parse_buffer	uri/lex.uri.c	/^int uri_parse_buffer(char *base, unsigned int size, struct uri *uri)$/;"	f
+uri_parse_bytes	uri/lex.uri.c	/^int uri_parse_bytes(const char *bytes, int len, struct uri *uri)$/;"	f
+uri_parse_string	uri/lex.uri.c	/^int uri_parse_string(const char *string, struct uri *uri)$/;"	f
+uri_recombine	uri/lex.uri.c	/^int uri_recombine(const struct uri *uri, char *uristr, unsigned int n,$/;"	f
+uri_scan_buffer	uri/lex.uri.c	/^YY_BUFFER_STATE uri_scan_buffer  (char * base, yy_size_t  size )$/;"	f
+uri_scan_bytes	uri/lex.uri.c	/^YY_BUFFER_STATE uri_scan_bytes  (yyconst char * yybytes, int  _yybytes_len )$/;"	f
+uri_scan_string	uri/lex.uri.c	/^YY_BUFFER_STATE uri_scan_string (yyconst char * yystr )$/;"	f
+uri_switch_to_buffer	uri/lex.uri.c	/^    void uri_switch_to_buffer  (YY_BUFFER_STATE  new_buffer )$/;"	f
+urialloc	uri/lex.uri.c	/^void *urialloc (yy_size_t  size )$/;"	f
+uriensure_buffer_stack	uri/lex.uri.c	/^static void uriensure_buffer_stack (void)$/;"	f	file:
+urifree	uri/lex.uri.c	/^void urifree (void * ptr )$/;"	f
+uriget_debug	uri/lex.uri.c	/^int uriget_debug  (void)$/;"	f
+uriget_in	uri/lex.uri.c	/^FILE *uriget_in  (void)$/;"	f
+uriget_leng	uri/lex.uri.c	/^int uriget_leng  (void)$/;"	f
+uriget_lineno	uri/lex.uri.c	/^int uriget_lineno  (void)$/;"	f
+uriget_out	uri/lex.uri.c	/^FILE *uriget_out  (void)$/;"	f
+uriget_text	uri/lex.uri.c	/^char *uriget_text  (void)$/;"	f
+uriin	uri/lex.uri.c	/^FILE *uriin = (FILE *) 0, *uriout = (FILE *) 0;$/;"	v
+urileng	uri/lex.uri.c	/^int urileng;$/;"	v
+urilex_destroy	uri/lex.uri.c	/^int urilex_destroy  (void)$/;"	f
+urilineno	uri/lex.uri.c	/^int urilineno = 1;$/;"	v
+uriout	uri/lex.uri.c	/^FILE *uriin = (FILE *) 0, *uriout = (FILE *) 0;$/;"	v
+uripop_buffer_state	uri/lex.uri.c	/^void uripop_buffer_state (void)$/;"	f
+uripush_buffer_state	uri/lex.uri.c	/^void uripush_buffer_state (YY_BUFFER_STATE new_buffer )$/;"	f
+urirealloc	uri/lex.uri.c	/^void *urirealloc  (void * ptr, yy_size_t  size )$/;"	f
+urirestart	uri/lex.uri.c	/^    void urirestart  (FILE * input_file )$/;"	f
+uriset_debug	uri/lex.uri.c	/^void uriset_debug (int  bdebug )$/;"	f
+uriset_in	uri/lex.uri.c	/^void uriset_in (FILE *  in_str )$/;"	f
+uriset_lineno	uri/lex.uri.c	/^void uriset_lineno (int  line_number )$/;"	f
+uriset_out	uri/lex.uri.c	/^void uriset_out (FILE *  out_str )$/;"	f
+uritext	uri/lex.uri.c	/^char *uritext;$/;"	v
+uriwrap	uri/lex.uri.c	/^int uriwrap(void)$/;"	f
+url_scheme	Url.h	/^enum url_scheme {$/;"	g
+userAgent	Http.cpp	/^char *userAgent = NULL;$/;"	v
+userinfo	include/uri.h	/^			char *userinfo;$/;"	m	struct:authority::__anon1::__anon2
+userinfo	uri/uri.h	/^			char *userinfo;$/;"	m	struct:authority::__anon3::__anon4
+valTypeCHL	Url.cpp	/^typedef map<string,string>::value_type valTypeCHL;$/;"	t	file:
+valTypeIpBlock	CommonDef.h	/^typedef map<unsigned long,unsigned long>::value_type valTypeIpBlock;$/;"	t
+valTypeIpBlock	Crawl.cpp	/^typedef map<unsigned long,unsigned long>::value_type valTypeIpBlock;$/;"	t	file:
+vsParsedLinks	Crawl.cpp	/^vector<string> vsParsedLinks;$/;"	v
+yy_accept	hlink/lex.hlink.c	/^static yyconst short int yy_accept[4213] =$/;"	v	file:
+yy_accept	uri/lex.uri.c	/^static yyconst flex_int16_t yy_accept[509] =$/;"	v	file:
+yy_acclist	hlink/lex.hlink.c	/^static yyconst short int yy_acclist[2138] =$/;"	v	file:
+yy_at_bol	hlink/lex.hlink.c	/^	int yy_at_bol;$/;"	m	struct:yy_buffer_state	file:
+yy_at_bol	uri/lex.uri.c	/^	int yy_at_bol;$/;"	m	struct:yy_buffer_state	file:
+yy_base	hlink/lex.hlink.c	/^static yyconst short int yy_base[4226] =$/;"	v	file:
+yy_base	uri/lex.uri.c	/^static yyconst flex_int16_t yy_base[519] =$/;"	v	file:
+yy_bs_column	uri/lex.uri.c	/^    int yy_bs_column; \/**< The column count. *\/$/;"	m	struct:yy_buffer_state	file:
+yy_bs_lineno	uri/lex.uri.c	/^    int yy_bs_lineno; \/**< The line count. *\/$/;"	m	struct:yy_buffer_state	file:
+yy_buf_pos	hlink/lex.hlink.c	/^	char *yy_buf_pos;		\/* current position in input buffer *\/$/;"	m	struct:yy_buffer_state	file:
+yy_buf_pos	uri/lex.uri.c	/^	char *yy_buf_pos;		\/* current position in input buffer *\/$/;"	m	struct:yy_buffer_state	file:
+yy_buf_size	hlink/lex.hlink.c	/^	yy_size_t yy_buf_size;$/;"	m	struct:yy_buffer_state	file:
+yy_buf_size	uri/lex.uri.c	/^	yy_size_t yy_buf_size;$/;"	m	struct:yy_buffer_state	file:
+yy_buffer_stack	uri/lex.uri.c	/^static YY_BUFFER_STATE * yy_buffer_stack = 0; \/**< Stack as an array. *\/$/;"	v	file:
+yy_buffer_stack_max	uri/lex.uri.c	/^static size_t yy_buffer_stack_max = 0; \/**< capacity of stack. *\/$/;"	v	file:
+yy_buffer_stack_top	uri/lex.uri.c	/^static size_t yy_buffer_stack_top = 0; \/**< index of top of stack. *\/$/;"	v	file:
+yy_buffer_state	hlink/lex.hlink.c	/^struct yy_buffer_state$/;"	s	file:
+yy_buffer_state	uri/lex.uri.c	/^struct yy_buffer_state$/;"	s	file:
+yy_buffer_status	hlink/lex.hlink.c	/^	int yy_buffer_status;$/;"	m	struct:yy_buffer_state	file:
+yy_buffer_status	uri/lex.uri.c	/^	int yy_buffer_status;$/;"	m	struct:yy_buffer_state	file:
+yy_c_buf_p	hlink/lex.hlink.c	/^static char *yy_c_buf_p = (char *) 0;$/;"	v	file:
+yy_c_buf_p	uri/lex.uri.c	/^static char *yy_c_buf_p = (char *) 0;$/;"	v	file:
+yy_ch_buf	hlink/lex.hlink.c	/^	char *yy_ch_buf;		\/* input buffer *\/$/;"	m	struct:yy_buffer_state	file:
+yy_ch_buf	uri/lex.uri.c	/^	char *yy_ch_buf;		\/* input buffer *\/$/;"	m	struct:yy_buffer_state	file:
+yy_chk	hlink/lex.hlink.c	/^static yyconst short int yy_chk[16151] =$/;"	v	file:
+yy_chk	uri/lex.uri.c	/^static yyconst flex_int16_t yy_chk[2647] =$/;"	v	file:
+yy_create_buffer	hlink/lex.hlink.c	/^YY_BUFFER_STATE yy_create_buffer( FILE *file, int size )$/;"	f
+yy_create_buffer	hlink/lex.hlink.c	1;"	d	file:
+yy_create_buffer	uri/lex.uri.c	8;"	d	file:
+yy_current_buffer	hlink/lex.hlink.c	/^static YY_BUFFER_STATE yy_current_buffer = 0;$/;"	v	file:
+yy_def	hlink/lex.hlink.c	/^static yyconst short int yy_def[4226] =$/;"	v	file:
+yy_def	uri/lex.uri.c	/^static yyconst flex_int16_t yy_def[519] =$/;"	v	file:
+yy_delete_buffer	hlink/lex.hlink.c	/^void yy_delete_buffer( YY_BUFFER_STATE b )$/;"	f
+yy_delete_buffer	hlink/lex.hlink.c	2;"	d	file:
+yy_delete_buffer	uri/lex.uri.c	9;"	d	file:
+yy_did_buffer_switch_on_eof	hlink/lex.hlink.c	/^static int yy_did_buffer_switch_on_eof;$/;"	v	file:
+yy_did_buffer_switch_on_eof	uri/lex.uri.c	/^static int yy_did_buffer_switch_on_eof;$/;"	v	file:
+yy_ec	hlink/lex.hlink.c	/^static yyconst int yy_ec[256] =$/;"	v	file:
+yy_ec	uri/lex.uri.c	/^static yyconst flex_int32_t yy_ec[256] =$/;"	v	file:
+yy_fatal_error	hlink/lex.hlink.c	/^static void yy_fatal_error( yyconst char msg[] )$/;"	f	file:
+yy_fatal_error	uri/lex.uri.c	/^static void yy_fatal_error (yyconst char* msg )$/;"	f	file:
+yy_fill_buffer	hlink/lex.hlink.c	/^	int yy_fill_buffer;$/;"	m	struct:yy_buffer_state	file:
+yy_fill_buffer	uri/lex.uri.c	/^	int yy_fill_buffer;$/;"	m	struct:yy_buffer_state	file:
+yy_flex_alloc	hlink/lex.hlink.c	/^static void *yy_flex_alloc( yy_size_t size )$/;"	f	file:
+yy_flex_debug	hlink/lex.hlink.c	6;"	d	file:
+yy_flex_debug	uri/lex.uri.c	10;"	d	file:
+yy_flex_free	hlink/lex.hlink.c	/^static void yy_flex_free( void *ptr )$/;"	f	file:
+yy_flex_realloc	hlink/lex.hlink.c	/^static void *yy_flex_realloc( void *ptr, yy_size_t size )$/;"	f	file:
+yy_flex_strlen	hlink/lex.hlink.c	/^static int yy_flex_strlen( yyconst char *s )$/;"	f	file:
+yy_flex_strlen	uri/lex.uri.c	/^static int yy_flex_strlen (yyconst char * s )$/;"	f	file:
+yy_flex_strncpy	hlink/lex.hlink.c	/^static void yy_flex_strncpy( char *s1, yyconst char *s2, int n )$/;"	f	file:
+yy_flex_strncpy	uri/lex.uri.c	/^static void yy_flex_strncpy (char* s1, yyconst char * s2, int n )$/;"	f	file:
+yy_flush_buffer	hlink/lex.hlink.c	/^void yy_flush_buffer( YY_BUFFER_STATE b )$/;"	f
+yy_flush_buffer	hlink/lex.hlink.c	8;"	d	file:
+yy_flush_buffer	uri/lex.uri.c	12;"	d	file:
+yy_full_lp	hlink/lex.hlink.c	/^static int yy_full_lp;$/;"	v	file:
+yy_full_match	hlink/lex.hlink.c	/^static char *yy_full_match;$/;"	v	file:
+yy_full_state	hlink/lex.hlink.c	/^static int *yy_full_state;$/;"	v	file:
+yy_get_next_buffer	hlink/lex.hlink.c	/^static int yy_get_next_buffer()$/;"	f	file:
+yy_get_next_buffer	uri/lex.uri.c	/^static int yy_get_next_buffer (void)$/;"	f	file:
+yy_get_previous_state	hlink/lex.hlink.c	/^static yy_state_type yy_get_previous_state()$/;"	f	file:
+yy_get_previous_state	uri/lex.uri.c	/^    static yy_state_type yy_get_previous_state (void)$/;"	f	file:
+yy_hold_char	hlink/lex.hlink.c	/^static char yy_hold_char;$/;"	v	file:
+yy_hold_char	uri/lex.uri.c	/^static char yy_hold_char;$/;"	v	file:
+yy_init	hlink/lex.hlink.c	/^static int yy_init = 1;		\/* whether we need to initialize *\/$/;"	v	file:
+yy_init	uri/lex.uri.c	/^static int yy_init = 0;		\/* whether we need to initialize *\/$/;"	v	file:
+yy_init_buffer	hlink/lex.hlink.c	/^void yy_init_buffer( YY_BUFFER_STATE b, FILE *file )$/;"	f
+yy_init_buffer	hlink/lex.hlink.c	7;"	d	file:
+yy_init_buffer	uri/lex.uri.c	11;"	d	file:
+yy_init_globals	uri/lex.uri.c	/^static int yy_init_globals (void)$/;"	f	file:
+yy_input_file	hlink/lex.hlink.c	/^	FILE *yy_input_file;$/;"	m	struct:yy_buffer_state	file:
+yy_input_file	uri/lex.uri.c	/^	FILE *yy_input_file;$/;"	m	struct:yy_buffer_state	file:
+yy_is_interactive	hlink/lex.hlink.c	/^	int yy_is_interactive;$/;"	m	struct:yy_buffer_state	file:
+yy_is_interactive	uri/lex.uri.c	/^	int yy_is_interactive;$/;"	m	struct:yy_buffer_state	file:
+yy_is_our_buffer	hlink/lex.hlink.c	/^	int yy_is_our_buffer;$/;"	m	struct:yy_buffer_state	file:
+yy_is_our_buffer	uri/lex.uri.c	/^	int yy_is_our_buffer;$/;"	m	struct:yy_buffer_state	file:
+yy_last_accepting_cpos	uri/lex.uri.c	/^static char *yy_last_accepting_cpos;$/;"	v	file:
+yy_last_accepting_state	uri/lex.uri.c	/^static yy_state_type yy_last_accepting_state;$/;"	v	file:
+yy_load_buffer_state	hlink/lex.hlink.c	/^void yy_load_buffer_state( void )$/;"	f
+yy_load_buffer_state	hlink/lex.hlink.c	9;"	d	file:
+yy_load_buffer_state	uri/lex.uri.c	13;"	d	file:
+yy_looking_for_trail_begin	hlink/lex.hlink.c	/^static int yy_looking_for_trail_begin = 0;$/;"	v	file:
+yy_lp	hlink/lex.hlink.c	/^static int yy_lp;$/;"	v	file:
+yy_meta	hlink/lex.hlink.c	/^static yyconst int yy_meta[31] =$/;"	v	file:
+yy_meta	uri/lex.uri.c	/^static yyconst flex_int32_t yy_meta[29] =$/;"	v	file:
+yy_n_chars	hlink/lex.hlink.c	/^	int yy_n_chars;$/;"	m	struct:yy_buffer_state	file:
+yy_n_chars	hlink/lex.hlink.c	/^static int yy_n_chars;		\/* number of characters read into yy_ch_buf *\/$/;"	v	file:
+yy_n_chars	uri/lex.uri.c	/^	int yy_n_chars;$/;"	m	struct:yy_buffer_state	file:
+yy_n_chars	uri/lex.uri.c	/^static int yy_n_chars;		\/* number of characters read into yy_ch_buf *\/$/;"	v	file:
+yy_new_buffer	hlink/lex.hlink.c	264;"	d	file:
+yy_new_buffer	uri/lex.uri.c	328;"	d	file:
+yy_nxt	hlink/lex.hlink.c	/^static yyconst short int yy_nxt[16151] =$/;"	v	file:
+yy_nxt	uri/lex.uri.c	/^	flex_int32_t yy_nxt;$/;"	m	struct:yy_trans_info	file:
+yy_nxt	uri/lex.uri.c	/^static yyconst flex_int16_t yy_nxt[2647] =$/;"	v	file:
+yy_pop_state	hlink/lex.hlink.c	/^static void yy_pop_state()$/;"	f	file:
+yy_pop_state	uri/lex.uri.c	/^    static void yy_pop_state  (void)$/;"	f	file:
+yy_push_state	hlink/lex.hlink.c	/^static void yy_push_state( int new_state )$/;"	f	file:
+yy_push_state	uri/lex.uri.c	/^    static void yy_push_state (int  new_state )$/;"	f	file:
+yy_scan_buffer	hlink/lex.hlink.c	/^YY_BUFFER_STATE yy_scan_buffer( char *base, yy_size_t size )$/;"	f
+yy_scan_buffer	hlink/lex.hlink.c	3;"	d	file:
+yy_scan_bytes	hlink/lex.hlink.c	/^YY_BUFFER_STATE yy_scan_bytes( yyconst char *bytes, int len )$/;"	f
+yy_scan_bytes	hlink/lex.hlink.c	5;"	d	file:
+yy_scan_string	hlink/lex.hlink.c	/^YY_BUFFER_STATE yy_scan_string( yyconst char *yy_str )$/;"	f
+yy_scan_string	hlink/lex.hlink.c	4;"	d	file:
+yy_set_bol	hlink/lex.hlink.c	273;"	d	file:
+yy_set_bol	uri/lex.uri.c	340;"	d	file:
+yy_set_interactive	hlink/lex.hlink.c	266;"	d	file:
+yy_set_interactive	uri/lex.uri.c	330;"	d	file:
+yy_size_t	hlink/lex.hlink.c	/^typedef unsigned int yy_size_t;$/;"	t	file:
+yy_size_t	uri/lex.uri.c	/^typedef size_t yy_size_t;$/;"	t	file:
+yy_start	hlink/lex.hlink.c	/^static int yy_start = 0;	\/* start state number *\/$/;"	v	file:
+yy_start	uri/lex.uri.c	/^static int yy_start = 0;	\/* start state number *\/$/;"	v	file:
+yy_start_stack	hlink/lex.hlink.c	/^static int *yy_start_stack = 0;$/;"	v	file:
+yy_start_stack	uri/lex.uri.c	/^        static int *yy_start_stack = NULL;$/;"	v	file:
+yy_start_stack_depth	hlink/lex.hlink.c	/^static int yy_start_stack_depth = 0;$/;"	v	file:
+yy_start_stack_depth	uri/lex.uri.c	/^        static int yy_start_stack_depth = 0;$/;"	v	file:
+yy_start_stack_ptr	hlink/lex.hlink.c	/^static int yy_start_stack_ptr = 0;$/;"	v	file:
+yy_start_stack_ptr	uri/lex.uri.c	/^        static int yy_start_stack_ptr = 0;$/;"	v	file:
+yy_state_buf	hlink/lex.hlink.c	/^static yy_state_type yy_state_buf[YY_BUF_SIZE + 2], *yy_state_ptr;$/;"	v	file:
+yy_state_ptr	hlink/lex.hlink.c	/^static yy_state_type yy_state_buf[YY_BUF_SIZE + 2], *yy_state_ptr;$/;"	v	file:
+yy_state_type	hlink/lex.hlink.c	/^typedef int yy_state_type;$/;"	t	file:
+yy_state_type	uri/lex.uri.c	/^typedef int yy_state_type;$/;"	t	file:
+yy_switch_to_buffer	hlink/lex.hlink.c	/^void yy_switch_to_buffer( YY_BUFFER_STATE new_buffer )$/;"	f
+yy_switch_to_buffer	hlink/lex.hlink.c	10;"	d	file:
+yy_switch_to_buffer	uri/lex.uri.c	14;"	d	file:
+yy_top_state	hlink/lex.hlink.c	/^static int yy_top_state()$/;"	f	file:
+yy_top_state	uri/lex.uri.c	/^    static int yy_top_state  (void)$/;"	f	file:
+yy_trans_info	uri/lex.uri.c	/^struct yy_trans_info$/;"	s	file:
+yy_try_NUL_trans	hlink/lex.hlink.c	/^static yy_state_type yy_try_NUL_trans( yy_state_type yy_current_state )$/;"	f	file:
+yy_try_NUL_trans	uri/lex.uri.c	/^    static yy_state_type yy_try_NUL_trans  (yy_state_type yy_current_state )$/;"	f	file:
+yy_verify	uri/lex.uri.c	/^	flex_int32_t yy_verify;$/;"	m	struct:yy_trans_info	file:
+yyalloc	uri/lex.uri.c	23;"	d	file:
+yyconst	hlink/lex.hlink.c	71;"	d	file:
+yyconst	hlink/lex.hlink.c	73;"	d	file:
+yyconst	uri/lex.uri.c	125;"	d	file:
+yyconst	uri/lex.uri.c	127;"	d	file:
+yyfree	uri/lex.uri.c	25;"	d	file:
+yyin	hlink/lex.hlink.c	/^FILE *yyin = (FILE *) 0, *yyout = (FILE *) 0;$/;"	v
+yyin	hlink/lex.hlink.c	11;"	d	file:
+yyin	uri/lex.uri.c	15;"	d	file:
+yyinput	hlink/lex.hlink.c	/^static int yyinput()$/;"	f	file:
+yyinput	uri/lex.uri.c	/^    static int yyinput (void)$/;"	f	file:
+yyleng	hlink/lex.hlink.c	/^int yyleng;$/;"	v
+yyleng	hlink/lex.hlink.c	12;"	d	file:
+yyleng	uri/lex.uri.c	16;"	d	file:
+yyless	hlink/lex.hlink.c	142;"	d	file:
+yyless	hlink/lex.hlink.c	7085;"	d	file:
+yyless	hlink/lex.hlink.c	7086;"	d	file:
+yyless	uri/lex.uri.c	186;"	d	file:
+yyless	uri/lex.uri.c	2841;"	d	file:
+yyless	uri/lex.uri.c	2842;"	d	file:
+yylex	hlink/lex.hlink.c	13;"	d	file:
+yylex	uri/lex.uri.c	17;"	d	file:
+yylineno	uri/lex.uri.c	18;"	d	file:
+yymore	hlink/lex.hlink.c	5569;"	d	file:
+yymore	uri/lex.uri.c	1212;"	d	file:
+yyout	hlink/lex.hlink.c	/^FILE *yyin = (FILE *) 0, *yyout = (FILE *) 0;$/;"	v
+yyout	hlink/lex.hlink.c	14;"	d	file:
+yyout	uri/lex.uri.c	19;"	d	file:
+yyrealloc	uri/lex.uri.c	24;"	d	file:
+yyrestart	hlink/lex.hlink.c	/^void yyrestart( FILE *input_file )$/;"	f
+yyrestart	hlink/lex.hlink.c	15;"	d	file:
+yyrestart	uri/lex.uri.c	20;"	d	file:
+yyterminate	hlink/lex.hlink.c	5757;"	d	file:
+yyterminate	uri/lex.uri.c	1441;"	d	file:
+yytext	hlink/lex.hlink.c	/^char *yytext;$/;"	v
+yytext	hlink/lex.hlink.c	16;"	d	file:
+yytext	uri/lex.uri.c	21;"	d	file:
+yytext_ptr	hlink/lex.hlink.c	288;"	d	file:
+yytext_ptr	uri/lex.uri.c	365;"	d	file:
+yyunput	hlink/lex.hlink.c	/^static void yyunput( int c, register char *yy_bp )$/;"	f	file:
+yyunput	uri/lex.uri.c	/^    static void yyunput (int c, register char * yy_bp )$/;"	f	file:
+yywrap	hlink/lex.hlink.c	/^int yywrap(void)$/;"	f
+yywrap	hlink/lex.hlink.c	17;"	d	file:
+yywrap	uri/lex.uri.c	22;"	d	file:
+~CCrawl	Crawl.cpp	/^CCrawl::~CCrawl()$/;"	f	class:CCrawl
+~CDataEngine	DataEngine.cpp	/^CDataEngine::~CDataEngine()$/;"	f	class:CDataEngine
+~CDatabaseEngine	DatabaseEngine.cpp	/^CDatabaseEngine::~CDatabaseEngine()$/;"	f	class:CDatabaseEngine
+~CFileEngine	FileEngine.cpp	/^CFileEngine::~CFileEngine()$/;"	f	class:CFileEngine
+~CHttp	Http.cpp	/^CHttp::~CHttp()$/;"	f	class:CHttp
+~CIsamFile	IsamFile.cpp	/^CIsamFile::~CIsamFile()$/;"	f	class:CIsamFile
+~CLink4SEFile	Link4SEFile.cpp	/^CLink4SEFile::~CLink4SEFile()$/;"	f	class:CLink4SEFile
+~CPage	Page.cpp	/^CPage::~CPage()$/;"	f	class:CPage
+~CSearch	Search.cpp	/^CSearch::~CSearch()$/;"	f	class:CSearch
+~CStrFun	StrFun.cpp	/^CStrFun::~CStrFun()$/;"	f	class:CStrFun
+~CTianwangFile	TianwangFile.cpp	/^CTianwangFile::~CTianwangFile()$/;"	f	class:CTianwangFile
+~CUrl	Url.cpp	/^CUrl::~CUrl()$/;"	f	class:CUrl

@@ -1,0 +1,127 @@
+
+TSE(Tiny Search Engine)
+=======================
+				(Temporary) Web home: 
+				http://162.105.80.44/~yhf/Realcourse/
+
+TSE is free utility for non-interactive download of files from 
+the Web. It supports HTTP. According to query word or url, 
+it retrieve results from crawled pages.
+
+It can follow links in HTML pages and create output files in Tianwang
+(http://e.pku.edu.cn/) format or ISAM format files. Additionally, it provies 
+link structures which can be used to rebuild the web frame.
+
+
+---------------------------
+Main functions in the TSE: 
+
+1) normal crawling, named SE, e.g: crawling all pages in PKU scope.
+	and retrieve results from crawled pages according to query 
+	word or url, 
+2) crawling images and corresponding pages, named ImgSE.
+
+---------------------------
+INSTALL:
+1) execute "tar xvfz tse.XXX.gz"
+
+---------------------------
+Before running the program, note
+
+Note: 
+The program is default for normal crawling (SE).
+
+For ImgSE, you should:
+1. change codes with the following requirements,
+
+1) In "Page.cpp" file, find two same functions "CPage::IsFilterLink(string plink)"
+
+One is for ImgSE whose urls must include "tupian", "photo", "ttjstk", etc.
+the other is for normal crawling.
+
+For ImgSE, remember to comment the paragraph and choose right
+"CPage::IsFilterLink(string plink)".
+For SE, remember to open the paragraph and choose righ
+"CPage::IsFilterLink(string plink)".
+
+2) In Http.cpp file
+  i. find "if( iPage.m_sContentType.find("image") != string::npos )"
+     Comment the right paragraph.
+
+3) In Crawl.cpp file, 
+  i. "if( iPage.m_sContentType != "text/html"
+     Comment the right paragraph.
+  ii. find "if(file_length < 40)"
+     Choose right one line.
+
+  iii. find "iMD5.GenerateMD5( (unsigned char*)iPage.m_sContent.c_str(), iPage.m_sContent.length() )"
+     Comment the right paragraph.
+  iv. find "if (iUrl.IsImageUrl(strUrl))"
+     Comment the right paragraph.
+
+2.sh Clean; (Note not remove link4History.url, you should commnet "rm -f link4History.url" line first)
+  secondly use "link4History.url" as a seed file. "link4History" is produced while normal crawling (SE).
+
+---------------------------
+EXECUTION:
+
+execute "make clean; sh Clean;make".
+1) for normal crawling and retrieving
+	./Tse -c tse_seed.img
+
+	According to query word or url, retrieve results from crawled pages
+	./Tse -s
+
+2) for ImgSE
+	./Tse -c tse_seed.img
+
+	After moving Tianwang.raw.* data to secure place, execute
+	./Tse -c link4History.url
+
+
+
+---------------------------
+Detail functions:
+
+1) suporting multithreads crawling pages
+2) persistent HTTP connection
+3) DNS cache
+4) IP block
+5) filter unreachable hosts
+6) parsing hyperlinks from crawled pages
+7) recursively crawling pages
+h) Outputing Tianwang format or ISAM format files
+
+---------------------------
+Files in the package
+
+Tse			--- Tse execute file
+tse_unreachHost.list	--- unreachable hosts according to PKU IP block
+tse_seed.pku		--- PKU seeds
+tse_ipblock		--- PKU IP block
+...
+
+Directories in the package
+
+hlink,include,lib,stack,uri directories
+			--- Parse links from a page
+
+---------------------------
+Please report bugs in TSE to <yhf@net.pku.edu.cn>
+MAINTAINERS: YAN Hongfei <yhf@net.pku.edu.cn>
+
+ * Created: YAN Hongfei, Network lab of Peking University. <yhf@net.pku.edu.cn>
+
+ * Created: July 15 2003. version 0.1.1
+ *              # Can crawl web pages with a process
+ * Updated: Aug 20 2003. version 1.0.0 !!!!
+ *              # Can crawl web pages with multithreads
+ * Updated: Nov 08 2003. version 1.0.1 
+ *              # more classes in the codes
+ * Updated: Nov 16 2003. version 1.1.0 
+ *              # integrate a new version linkparser provided 
+		  by XIE Han  <xh@net.pku.edu.cn>
+ *		# according to all MD5 values of pages content,
+ *		  for all the pages not seen before, store a new page
+ * Updated: Nov 21 2003. version 1.1.1
+ *              # record all duplicate urls in terms of content MD5

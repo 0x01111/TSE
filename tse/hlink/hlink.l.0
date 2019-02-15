@@ -1,0 +1,404 @@
+/*
+ * hlink.l -- Function for detecting hyper links in html file.
+ * Created: Xie Han, net lab of Peking University. <me@pku.edu>
+ */
+
+blank			[ \t\r\n]
+cdata			[A-Za-z][A-Za-z0-9\-_:.]*
+hex				{digit}|[A-Fa-f]
+digit			[0-9]
+
+%option stack
+
+%s COMMENT SCRIPT ATTRIBUTE IGNORE_ALL IGNORE IGNORE_UNQUOTED
+%s URI UNQUOTED DOUBLE_QUOTED SINGLE_QUOTED ENTITY
+
+%{
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+#include <uri.h>
+#include "hlink.h"
+
+#define URI_LEN_MAX		1024
+#define HLINK_ISBLANK(c) \
+({																\
+	char tmp = c;												\
+	tmp == ' ' || tmp == '\n' || tmp == '\r' || tmp == 't';		\
+})
+
+static struct uri *__base_uri;
+static int __is_our_base;
+static onfind_t __onfind;
+static void *__arg;
+static char __buffer[URI_LEN_MAX + 2];
+static char *__curpos;
+
+struct __elem
+{
+	char *name;
+	char **attr;
+};
+
+static char *__elem_a_attr[] = {"href", NULL};
+static char *__elem_area_attr[] = {"href", NULL};
+static char *__elem_base_attr[] = {"href", NULL};
+static char *__elem_frame_attr[] = {"src", NULL};
+static char *__elem_iframe_attr[] = {"src", NULL};
+static char *__elem_img_attr[] = {"src", NULL};
+static char *__elem_link_attr[] = {"href", NULL};
+
+static struct __elem __elem[] = {
+	{"A", __elem_a_attr},
+	{"AREA", __elem_area_attr},
+	{"BASE", __elem_base_attr},
+	{"FRAME", __elem_frame_attr},
+	{"IFRAME", __elem_iframe_attr},
+	{"IMG", __elem_img_attr},
+	{"LINK", __elem_link_attr},
+	{NULL, NULL}
+};
+
+static struct __elem *__cur_elem;
+static char *__cur_attr;
+
+%}
+
+%%
+
+<INITIAL>"<!--"		BEGIN COMMENT;
+
+<INITIAL>"</"{cdata}">"
+
+<INITIAL>.|\n
+
+<INITIAL><<EOF>>	{
+	if (__is_our_base)
+	{
+		uri_destroy(__base_uri);
+		free(__base_uri);
+	}
+
+	return 0;
+}
+
+<COMMENT,SCRIPT>.|\n
+
+<SCRIPT>"</"{cdata}">"	{
+	int i;
+
+	for (i = 2; i < yyleng - 1; i++)
+		yytext[i] = toupper(yytext[i]);
+	yytext[i] = '\0';
+
+	if (strcmp(yytext + 2, "SCRIPT") == 0)
+		BEGIN INITIAL;
+}
+
+<COMMENT>"-->"				|
+<COMMENT,SCRIPT><<EOF>>		BEGIN INITIAL;
+
+<INITIAL>"<"{cdata}/{blank}|">"		{
+	int i;
+
+	/* Element names are case-insensitive. */
+	for (i = 1; i < yyleng; i++)
+		yytext[i] = toupper(yytext[i]);
+	yytext[i] = '\0';
+
+	for (i = 0; __elem[i].name; i++)
+	{
+		if (strcmp(yytext + 1, __elem[i].name) == 0)
+		{
+			__cur_elem = __elem + i;
+			break;
+		}
+	}
+
+	if (strcmp(yytext + 1, "SCRIPT") == 0)
+		BEGIN SCRIPT;
+	else
+		BEGIN INITIAL;
+
+	if (__elem[i].name)
+		yy_push_state(ATTRIBUTE);
+	else
+		yy_push_state(IGNORE_ALL);
+}
+
+<ATTRIBUTE>{cdata}{blank}*"="{blank}*	{
+	int i;
+
+	/* Atrribute names are case-insensitive. */
+	for (i = 0; !HLINK_ISBLANK(yytext[i]) && yytext[i] != '='; i++)
+		yytext[i] = tolower(yytext[i]);
+	yytext[i] = '\0';
+
+	for (i = 0; __cur_elem->attr[i]; i++)
+	{
+		if (strcmp(yytext, __cur_elem->attr[i]) == 0)
+		{
+			__curpos = __buffer;
+			__cur_attr = __cur_elem->attr[i];
+			break;
+		}
+	}
+
+	if (__cur_elem->attr[i])
+		BEGIN URI;
+	else
+		yy_push_state(IGNORE);
+}
+
+	/* The attribute named "__attr_name" has been found. All the
+	 * following attributes will been ignored. */
+<IGNORE_ALL>{cdata}{blank}*"="{blank}*	yy_push_state(IGNORE);
+
+<ATTRIBUTE,IGNORE_ALL>[^<>]
+
+<ATTRIBUTE,IGNORE_ALL>.|\n		|
+<ATTRIBUTE,IGNORE_ALL><<EOF>>	{
+	if (*yytext == '<')
+		yyless(0);
+	yy_pop_state();
+}
+
+<IGNORE>\"[^"]*\"|"'"[^']*"'"	yy_pop_state();
+
+<IGNORE>.|\n		{
+	yyless(0);
+	BEGIN IGNORE_UNQUOTED;
+}
+
+<IGNORE_UNQUOTED>{blank}|">"	{
+	if (*yytext == '>')
+		yyless(0);
+	yy_pop_state();
+}
+
+<IGNORE_UNQUOTED>.|\n
+
+<IGNORE,IGNORE_UNQUOTED><<EOF>>		yy_pop_state();
+
+<URI>\"{blank}*		BEGIN DOUBLE_QUOTED;
+
+<URI>"'"{blank}*	BEGIN SINGLE_QUOTED;
+
+<URI>.|\n			{
+	yyless(0);
+	BEGIN UNQUOTED;
+}
+
+<URI><<EOF>>		BEGIN ATTRIBUTE;
+
+<DOUBLE_QUOTED,SINGLE_QUOTED>\r|\n
+
+<DOUBLE_QUOTED>{blank}*\"	|
+<SINGLE_QUOTED>{blank}*"'"	|
+<UNQUOTED>{blank}|">"		{
+	struct uri uri;
+	struct uri *result;
+	int n;
+
+	/* If a URI is unquoted, put back the trailing '>'. */
+	if (*yytext == '>')
+		yyless(0);
+
+	/* Last two characters must be "\0". */
+	*(__curpos + 1) = *__curpos = '\0';
+	yyleng = uri_parse_buffer(__buffer, __curpos - __buffer + 2, &uri);
+	if (yyleng >= 0)
+	{
+		if (yyleng == __curpos - __buffer)
+		{
+			if (result = (struct uri *)malloc(sizeof (struct uri)))
+				n = uri_merge(&uri, __base_uri, result);
+		}
+
+		uri_destroy(&uri);
+		BEGIN ATTRIBUTE;
+		if (yyleng == __curpos - __buffer)
+		{
+			if (result)
+			{
+				if (n >= 0)
+				{
+					if (strcmp(__cur_elem->name, "base") == 0 &&
+						strcmp(__cur_attr, "href") == 0)
+					{
+						if (__is_our_base)
+						{
+							uri_destroy(__base_uri);
+							free(__base_uri);
+						}
+						else
+							__is_our_base = 1;
+
+						__base_uri = result;
+						YY_BREAK
+					}
+
+					if (__onfind(__cur_elem->name, __cur_attr, result,
+								 __arg) >= 0)
+						YY_BREAK
+				}
+				else
+					free(result);
+			}
+		}
+		else
+			YY_BREAK
+	}
+
+	/* Failed! Stop scanning and return -1. Possibilities of failure:
+	 * failed to parse URI; failed to allocate memory for "result";
+	 * failed to merge the relative URI with the base URI; "onfind"
+	 * function return negative number. */
+	yy_pop_state();
+	if (__is_our_base)
+	{
+		uri_destroy(__base_uri);
+		free(__base_uri);
+	}
+
+	return -1;
+}
+
+<UNQUOTED,DOUBLE_QUOTED,SINGLE_QUOTED>"&#"{digit}+";"		|
+<UNQUOTED,DOUBLE_QUOTED,SINGLE_QUOTED>"&#"(X|x){hex}+";"	{
+	yytext[yyleng - 1] = '\0';
+	if (yytext[2] == 'X' || yytext[2] == 'x')
+		sscanf(yytext + 3, "%x", &yyleng);
+	else
+		yyleng = atoi(yytext + 2);
+
+	do
+	{
+		unput(yyleng & 0xff);
+		yy_push_state(ENTITY);
+	}
+	while (((unsigned int)yyleng >>= 8) > 0);
+}
+
+<UNQUOTED,DOUBLE_QUOTED,SINGLE_QUOTED>"&lt;"		{
+	unput('<');
+	yy_push_state(ENTITY);
+}
+
+<UNQUOTED,DOUBLE_QUOTED,SINGLE_QUOTED>"&gt;"		{
+	unput('>');
+	yy_push_state(ENTITY);
+}
+
+<UNQUOTED,DOUBLE_QUOTED,SINGLE_QUOTED>"&amp;"		{
+	unput('&');
+	yy_push_state(ENTITY);
+}
+
+<UNQUOTED,DOUBLE_QUOTED,SINGLE_QUOTED>"&quot;"		{
+	unput('"');
+	yy_push_state(ENTITY);
+}
+
+<UNQUOTED,DOUBLE_QUOTED,SINGLE_QUOTED,ENTITY>.|\n	{
+	if (YY_START == ENTITY)
+		yy_pop_state();
+
+	if (is_uri_chr(*yytext) && __curpos < __buffer + URI_LEN_MAX)
+		*__curpos++ = *yytext;
+	else if (__curpos + 2 < __buffer + URI_LEN_MAX)
+	{
+		sprintf(__curpos, "%%%X%X",
+				(unsigned char)*yytext >> 4, *yytext & 0x0f);
+		__curpos += 3;
+	}
+	else
+	{
+		/* The URI is soooooooo long! It's more likely than the page has
+		 * grammar error. Return to initial state and go on scanning */
+		while (YY_START == ENTITY)
+		{
+#ifdef __cplusplus
+			yyinput();
+#else
+			input();
+#endif
+			yy_pop_state();
+		}
+
+		yy_pop_state();
+		BEGIN INITIAL;
+	}
+}
+
+<UNQUOTED,DOUBLE_QUOTED,SINGLE_QUOTED><<EOF>>	BEGIN ATTRIBUTE;
+
+%%
+
+int yywrap(void)
+{
+	return 1;
+}
+
+#ifdef __cplusplus
+#include <iostream>
+using namespace std;
+
+int HLinkDetect(istream *PageFile, const struct uri *PageURI,
+				onfind_t OnFind, void *arg)
+{
+	FlexLexer* lexer = new yyFlexLexer;
+	int n = -1;
+
+	if (lexer)
+	{
+		__base_uri = (struct uri *)PageURI;
+		__is_our_base = 0;
+		__onfind = OnFind;
+		__arg = arg;
+
+		n = lexer->yylex(PageFile);
+	}
+
+	return n;
+}
+
+#else
+
+int hlink_detect(FILE *pg_file, const struct uri *pg_uri,
+				 onfind_t onfind, void *arg)
+{
+	yyin = pg_file;
+	__base_uri = (struct uri *)pg_uri;
+	__is_our_base = 0;
+	__onfind = onfind;
+	__arg = arg;
+
+	BEGIN INITIAL;
+	return yylex();
+}
+
+#endif
+
+int hlink_detect_string(const char *string, const struct uri *pg_uri,
+						onfind_t onfind, void *arg)
+{
+	YY_BUFFER_STATE buf;
+	int n = -1;
+
+	if (buf = yy_scan_string(string))
+	{
+		yy_switch_to_buffer(buf);
+		__base_uri = (struct uri *)pg_uri;
+		__is_our_base = 0;
+		__onfind = onfind;
+		__arg = arg;
+
+		BEGIN INITIAL;
+		n = yylex();
+		yy_delete_buffer(buf);
+	}
+
+	return n;
+}
+

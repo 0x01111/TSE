@@ -1,0 +1,33 @@
+GET / HTTP/1.0\nHost: ccl.pku.edu.cn\nUser-Agent: Tse/1.0\nConnection: Keep-Alive\n\n
+GET / HTTP/1.0\r\nUser-Agent: Wget/1.8.1\r\nHost: ccl.pku.edu.cn\r\nAccept: */*\r\nConnection: Keep-Alive\r\n\r\n
+GET /links/url.asp?id=53 HTTP/1.0\r\nHost: ccl.pku.edu.cn\r\nUser-Agent:
+Tse/1.0\r\nConnection: Keep-Alive\r\n\r\n
+
+GET /doubtfire HTTP/1.0\r\nHost: ccl.pku.edu.cn\r\nUser-Agent: Tse/1.0\r\n
+
+GET http://ccl.pku.edu.cn/resource.asp?item=1&expand=218&sort=hits HTTP/1.0
+Host: ccl.pku.edu.cn
+User-Agent: Tse/1.0
+Connection: Keep-Alive
+
+GET / HTTP/1.0
+User-Agent: Wget/1.8.1
+Host: ccl.pku.edu.cn
+Accept: */*
+Connection: Keep-Alive
+
+ pid=3074042800 sock = -1
+ParseUrlEx error in Fetch(): ccl.pku.edu.cn/doubtfire/science_human/2.htm
+!-:
+http://ccl.pku.edu.cn/doubtfire/link2file.asp?FileLink=/doubtfire/Science_Human/2.htm
+collection has: 699 unvisited urls
+1. pid=3074042800 sock = -1
+2. pid=3074042800 sock = -1
+ParseUrlEx error in Fetch(): ccl.pku.edu.cn/doubtfire/science_human/5.htm
+!-:
+http://ccl.pku.edu.cn/doubtfire/link2file.asp?FileLink=/doubtfire/Science_Human/5.htm
+collection has: 698 unvisited urls
+1. pid=3074042800 sock = -1
+!header code = 500
+!-: http://ccl.pku.edu.cn/%5Cbbs%5Cdefault.asp
+

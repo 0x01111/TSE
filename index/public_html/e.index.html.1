@@ -1,0 +1,287 @@
+<html>
+<head>
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>欢迎访问北京大学天网中英文搜索引擎</title>
+<style>
+a {color: rgb(0,0,150) ; Text-decoration:none  ; font-weight : none}
+a:hover {color: rgb(250,40,40);text-decoration:underline; font-weight : none}
+a:visited {color: rgb(80,0,80)}
+</style>
+
+<script LANGUAGE="JavaScript">
+<!--
+function SetCookie (name, value) {
+    var argv = SetCookie.arguments;
+    var argc = SetCookie.arguments.length;
+    var expires = (argc > 2) ? argv[2] : null;
+    var path = (argc > 3) ? argv[3] : null;
+    var domain = (argc > 4) ? argv[4] : null;
+    var secure = (argc > 5) ? argv[5] : false;
+    document.cookie = name + "=" + escape (value) +
+     ((expires == null) ? "" : ("; expires=" + expires.toGMTString())) +
+     ((path == null) ? "" : ("; path=" + path)) +
+     ((domain == null) ? "" : ("; domain=" + domain)) +
+     ((secure == true) ? "; secure" : "");
+}
+   
+function getCookieVal(offset) { 
+    var endstr = document.cookie.indexOf (";", offset);
+    if (endstr == -1) endstr = document.cookie.length;
+    return unescape (document.cookie.substring(offset, endstr));
+}
+function GetCookie(name) {
+    var arg = name+"=";
+    var alen = arg.length;
+    var clen = document.cookie.length;
+    var i = 0;
+	while (i < clen) {
+      var j = i + alen;
+	  if (document.cookie.substring(i, j) == arg) return getCookieVal(j);
+	  i = document.cookie.indexOf(" ", i) + 1;
+	  if (i == 0) break;
+    }
+    return null;
+}
+function fixDate(date) {
+      var base = new Date(0)
+      var skew = base.getTime()
+      if (skew > 0)
+	      date.setTime(date.getTime() - skew)
+}
+											   
+function setfocus(){
+    document.tw.word.focus();
+//	document.tw.word.value="";
+}
+
+function FtpSubmit() {
+     document.location="http://bingle.pku.edu.cn/scripts/ftp_search.exe?cdtype=GB&word="+document.tw.word.value;
+}
+function ProductSubmit() {
+      document.location="http://www.netera.com.cn/cgi-bin/allsearch?cdtype=GB&word="+document.tw.word.value;
+      
+}
+
+function WWWSubmit(ss) {
+     var url;
+	 url = "http://e.pku.edu.cn/cgi-bin/allsearch?cdtype=GB&word="+document.tw.word.value+"+"+ss;
+	// alert(url);
+	// document.location=url;
+	//return url;
+	//window.navigate(url);
+	window.open(url,"_self");
+}
+function fnKeydown(){
+	//alert("[trap = " + event.keyCode + "]");
+	
+	if(event.keyCode == 13){
+		//alert("hello");
+		//AddClass();
+
+		document.tw.www.focus();
+		document.tw.www.fireEvent("onclick");
+	}
+}
+function AddClass() {
+
+	var strtmp = document.tw.city.value;
+	var s,ss;
+
+//	alert("hello");
+	if (strtmp != 0)
+	{	
+		 s=strtmp.split("-");
+		// alert(s[0]);
+
+		 strtmp = document.tw.area.value;
+		 if (strtmp != 0)
+		 {
+		 	 s=strtmp.split("-");
+		//	 alert(s[0]);
+		 }
+	 
+	 
+		 //document.tw.word.value=document.tw.word.value+"classid:"+s[0];
+	 	ss = "classid:"+s[0];
+//		alert(ss);
+	 	WWWSubmit(ss);
+
+	 }
+	else  WWWSubmit("");
+}
+// -->
+</script>
+<SCRIPT language=JavaScript>
+<!--
+
+var cardcity=new Array(
+    new Array('--全部--','--全部--'),
+	new Array('01-人文与艺术','0103-视觉艺术','0107-表演艺术','0119-设计艺术','0121-工艺品'),
+	new Array('03-商业与经济','0304-发明','0306-房地产','0308-经济技术开发区','0310-公司','0314-交通运输','0319-贸易','0324-消费者权益','0329-中小企业',
+	'0331-投资','0332-服务行业'),
+	new Array('04-娱乐与休闲','0403-嗜好','0406-体育运动','0408-居家与园艺','0409-玩具','0410-航空','0413-户外活动','0414-旅游','0418-游戏',
+	'0422-抽奖','0423-卡拉OK与KTV','0425-博彩','0426-电影','0427-动画与卡通','0429-科幻与奇想','0437-星相命理','0439-音乐','0441-游乐场'),
+	new Array('05-计算机与因特网','0501-人工智能','0502-计算机系统结构','0503-通讯与网络','0504-信息安全','0505-计算机应用','0507-计算机基础科学',
+	'0515-因特网','0516-程序设计语言','0518-硬件','0529-软件','0531-多媒体'),
+	new Array('07-教育','0704-成人进修教育','0705-大专院校与研究所','0706-教育改革','0707-考试','0708-海外留学','0710-奖助学金','0712-教学技术',
+	'0715-女性教育','0717-特殊教育','0720-幼儿教育','0721-远程教学','0723-职业教育','0725-中小学'),
+	new Array('08-区域','0801-国家与地区','0802-洲'),
+	new Array('10-自然科学','1004-地理学','1005-地球科学','1008-工程学','1009-航空、航天科学技术','1010-化学','1015-另类科学','1017-农业科学',
+	'1019-认知科学','1020-生命科学','1021-生态学','1022-生物学','1023-数学','1025-天文学','1027-物理学','1031-林业学','1032-渔业学','1033-核科学',
+	'1034-电子、通信、控制技术','1035-环境科学','1037-信息科学与系统科学'),
+    new Array('11-政府与政治','1102-公安、检察院、法院','1104-大使馆，领事馆与办事处','1105-军事','1110-国徽，国旗与国歌','1111-税务','1112-政治'),
+    new Array('12-社会科学','1201-教育学','1203-历史学','1205-新闻与传播学','1206-妇女研究','1207-法学','1208-经济学','1214-人类学与考古学',
+    '1215-企业管理','1216-管理工程','1217-社会学','1222-语言学','1223-政治学','1225-图书馆、情报与文献学','1228-哲学','1229-宗教学'),
+    new Array('13-医疗与健康','1301-疾病与症状','1302-基础医学','1303-临床医学','1304-预防医学与卫生学','1305-军事医学与特种医学','1306-药学',
+    '1307-中医学与中药学','1308-兽医学与畜牧学','1309-健康','1310-治疗与程序','1311-公共卫生与安全','1312-急救'),
+    new Array('14-社会与文化','1403-残障','1404-犯罪','1405-环境与自然','1406-婚礼','1408-家庭','1409-节庆假日','1414-人际关系','1415-人物',
+    '1416-神话与民间风俗','1417-死亡','1418-讨论话题','1419-文化与团体','1422-饮食','1424-宗教')
+);
+
+
+//-->
+</SCRIPT>
+</head>
+
+<!-- script>
+		window.open("sewm2004.htm",null,"width=460,height=300,top=40,left=40,status=no,toolbar=no,menubar=no,location=no,scrollbars=yes");
+</script>
+-->
+
+<body onLoad=setfocus() onkeyup="fnKeydown()" bgcolor="#FFFFFF" text="#000000">
+<!-- body onkeyup="fnKeydown()" bgcolor="#FFFFFF" text="#000000" -->
+
+	<!--form method="GET" action="/cgi-bin/allsearch" name="tw"-->
+	<form method="GET" name="tw">
+	
+<SCRIPT language=JavaScript>
+<!--
+tsform=document.tw;
+function reArea(ind) {
+	tsform.area.options.length=cardcity[ind].length;
+	tsform.area.options[0]=new Option('--全部--','');
+	tsform.area.selectedIndex=0;
+	for (var i=1;i<cardcity[ind].length;i++)
+	{
+		var strtmp = cardcity[ind][i];
+		var ss = strtmp.split("-");
+
+		tsform.area.options[i]=new Option(ss[1],ss[0]);
+	}
+}
+//-->
+</SCRIPT>
+
+		<p></p>
+		<table border="0" width="622" cellspacing="0" cellpadding="0" align="center" height="300">
+		<tr><td width="620" height="58" valign="middle">
+		<p align="center"><br><br>
+        <img border="0" src="images/title.JPG" width="407" height="85"  >
+        <p align="center">　
+        </td> </tr>
+
+		<tr><td width="620" height="22">
+            <p align="center">
+			<font color="#800000">网页</font>&nbsp;
+			<a href="http://bingle.pku.edu.cn/">文件</a>&nbsp;
+			<a href="http://e.pku.edu.cn/cgi-bin/getdirectory">目录 </a>&nbsp;
+			  <a href="http://www.infomall.cn/">信息博物馆</a>&nbsp;
+			  <a href="twtopic.htm">主题</a>
+			<!--a href="enindex.htm">English Version<br-->
+
+<!--
+		<script language="javascript">        
+		<!-- 
+			var color_1="blue";  
+			var color_2="red";  
+			var str="天网主题"  
+			var n=-1;  
+
+//			document.write('<img src="http://e.pku.edu.cn/images/new.gif" border=0>');
+			for(m=0;m<str.length;m++)  
+				document.write('<a href="twtopic.htm"><span id="flash_1">'+str.charAt(m)+'</span></a>');  
+			var temp=document.all.flash_1  
+			function showbbs(){  
+				if(n==-1){  
+					for(m=0;m<str.length;m++)  
+						temp[m].style.color=color_1;  
+					n=0;  
+				}else{  
+					temp[n].style.color=color_2;  
+					if(n<str.length-1)  
+						n++;  
+					else n=-1;  
+				}}  
+			setInterval("showbbs();",200);      
+	   //  
+	   </script>
+-- >
+
+		<!--a href="twtopic.htm">天网主题<img src="http://e.pku.edu.cn/images/new.gif" border=0></a--> <br>        
+		 </td></tr>
+
+		 <tr><td width="620" height="25">
+         <p align="center">
+		 <input type="text" name="word" size="55" MAXLENGTH=60 onkeydown="fnKeydown()"></p>
+         <p align="center">类别：<SELECT name=city 
+                  onchange=reArea(this.selectedIndex) 
+                  style="color: #555577; width: 114; height: 23"> 
+                    <SCRIPT language=JavaScript>
+<!--
+for (var i=0;i<cardcity.length;i++) 
+	if (i==0) {
+		document.write('<option value="0" selected>'+cardcity[i][0]+'</option>');
+	} else {
+		var strtmp = cardcity[i][0];
+		var ss = strtmp.split("-");
+		document.write('<option value="'+ss[0]+'">'+ss[1]+'</option>');
+	}
+//-->
+</SCRIPT>
+                  </SELECT>
+         －<SELECT name=area style="color: #555577; width: 117; height: 23" size="1">        
+                    <SCRIPT language=JavaScript> 
+<!--
+document.write('<option value="0" selected>全部</option>');
+var ind=tw.city.selectedIndex;
+
+for (var i=1;i<cardcity[ind].length;i++)
+{
+		var strtmp = cardcity[ind][i];
+		var ss = strtmp.split("-");
+		document.write('<option value="'+ss[0]+'">'+ss[1]+'</option>');
+}
+
+//-->
+</SCRIPT>
+                  </SELECT></p>
+		 </td></tr> 
+
+		 <tr><td width="620" height="80">
+		 <p align="center"><br>
+		 <input type="button" value=" 搜索网页 " name="www" onclick="AddClass()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" value=" 搜索产品 " name="product" OnClick="ProductSubmit()">&nbsp;&nbsp;&nbsp;   
+         &nbsp; <input type="button" value=" 搜索文件 " name="ftp" OnClick="FtpSubmit()"></p>                                        
+		</td></tr>
+
+        <tr>
+          <td align="center">
+
+
+	</td> </tr>
+	<tr>
+			<td width="620" height="58" align="center"> <font size=2><a href="gbaboutproject.htm">项目简介</a>|
+			<a href="http://bbs.bingle.com.cn">搜索论坛</a>|
+			<a href="gbhelp.htm">使用帮助</a>|<a href="http://www.infomall.cn/url_submit.html"> 登录网站</a>| 
+			<a href="http://www.hk-skynet.org/">香港天网</a>|
+			<a href="http://www.tianwang.org/">天网时代</a>   |
+			<a href="campus.htm">校园搜索</a>   |
+			<a href="http://toolbar.bingle.com.cn/">天网搜霸</a><br> <br>  <!--#exec cgi="cgi-bin/counter/counter.cgi" -->&copy;2004 <a href="http://net.pku.edu.cn/">北大网络实验室</a> - 搜索1亿网页</font>   
+	</td>
+	</tr>
+	</table>
+
+</body>
+</html>                         

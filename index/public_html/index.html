@@ -1,0 +1,52 @@
+<html>
+<head>
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>Tiny Search Eenine 搜索引擎</title>
+<style>
+a {  color: rgb(0,0,150) ; Text-decoration:none  ; font-weight : none}
+a:hover {color: rgb(250,40,40);text-decoration:underline; font-weight : none}
+a:visited {color: rgb(80,0,80)}
+</style>
+</head>
+
+<body onLoad=setfocus() bgcolor="#FFFFFF" text="#000000">
+
+<br><br><br><br>
+<table border="0" width="550" cellspacing="0" cellpadding="0" align="center" height="300">
+    <tr>
+	<td width="100%" height="150" align="middle">
+	<img border="0" src="tsetitle.JPG" width="407" height="85"  >
+	</td>   
+    </tr>
+    <tr>
+    	<form method="get" action="/yc-cgi-bin/index/TSESearch" name="tw">
+		<td width="100%" height="25" align="center">                           
+		<input type="text" name="word" size="55">
+		<input type="submit" value=" 搜索" name="www">
+		</td>                           
+		<input type="hidden" name="cdtype" value="GB">                         
+    	</form>                         
+    </tr>                         
+    <tr>
+ 	<td align=center>
+	<font size=2>&copy;2004
+	<a href="http://net.pku.edu.cn/">北大网络实验室</a>
+	</font>
+	</td>
+    </tr>
+
+</table>
+
+</body>
+</html>                         
+
+<script LANGUAGE="JavaScript">
+<!--
+function setfocus(){
+    document.tw.word.focus();
+//	document.tw.word.value="";
+}
+
+-->
+</script>
