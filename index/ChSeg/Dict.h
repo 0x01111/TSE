@@ -9,7 +9,7 @@
 
 using namespace std;
 
-const string DICTFILENAME("words.dict");
+const string DICTFILENAME("/Users/lmxing/Documents/code/cpp/library/TSE/index/ChSeg/words.dict");
 
 
 /*

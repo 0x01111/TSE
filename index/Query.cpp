@@ -26,14 +26,25 @@ CQuery::~CQuery()
 void CQuery::ParseQuery(vector<string> &vecTerm)
 {
 	string::size_type idx; 
+    if (1==1) {
+        vecTerm.push_back(m_sQuery);
+        return;
+    }
 	while ( (idx = m_sSegQuery.find("/  ")) != string::npos ) { 
 		vecTerm.push_back(m_sSegQuery.substr(0,idx)); 
 		m_sSegQuery = m_sSegQuery.substr(idx+3); 
 	}
 }
 
+void CQuery::SetQuery(string & q)
+{
+    CStrFun::Str2Lower(q,q.size());
+    m_sQuery = q;
+}
+
 void CQuery::SetQuery()
 {
+	//string q = HtmlInputs[0].Value;
 	string q = HtmlInputs[0].Value;
 	CStrFun::Str2Lower(q,q.size());
 	m_sQuery = q;
@@ -41,7 +52,8 @@ void CQuery::SetQuery()
 
 void CQuery::SetStart()
 {
-	m_iStart = atoi(HtmlInputs[1].Value);
+	//m_iStart = atoi(HtmlInputs[1].Value);
+	m_iStart = 1; //atoi(HtmlInputs[1].Value);
 }
 
 bool CQuery::GetInvLists(map<string, string> &mapBuckets) const
@@ -119,6 +131,10 @@ bool CQuery::GetDocIdx(vector<DocIdx> &vecDocIdx) const
  */
 int CQuery::GetInputs()
 {
+    cout << "get input" << endl;
+    if (1 == 1) {
+        return 0;
+    }
         int i,j;
 	char *mode = getenv("REQUEST_METHOD");
         char *tempstr;
@@ -251,6 +267,7 @@ bool CQuery::GetRelevantRst(vector<string> &vecTerm,
 	set<string> &setRelevantRst) const
 {
 	//LB_c: 临时存储已经查询的结果
+    cout<< "start GetRelevantRst" << endl;
 	set<string> setSRst;
 	bool bFirst=true;
 
@@ -271,6 +288,7 @@ bool CQuery::GetRelevantRst(vector<string> &vecTerm,
 		int doccnt;
 		//LB_c: 在倒排表中查询关键词(*itTerm)
 		map<string,string>::iterator itBuckets = mapBuckets.find(*itTerm);	
+        cout <<"term:" << *itTerm << endl;
 		//LB_c: 在倒排表中找到了该关键词
 		if (itBuckets != mapBuckets.end()){
 

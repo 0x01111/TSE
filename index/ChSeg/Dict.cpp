@@ -21,14 +21,13 @@ void CDict::OpenDict()
 		cout << "Can not open the Dictionary file!";
 		exit(1);
 	}
-  
 	int id, freq;
 	char word[16];
+    int limit = 100;
 	while (fscanf(fpDict, "%d %s %d", &id, word, &freq) != EOF) {
-		//fscanf(fpDict, "%d %s %d", &id, word, &freq);
-		mapDict.insert(map<string,int>::value_type (word, 0));
+    //    fscanf(fpDict, "%d %s %d", &id, word, &freq);
+		mapDict.insert(map<string,int>::value_type (word, freq));
 	}
-  
 	fclose(fpDict);
   
 }

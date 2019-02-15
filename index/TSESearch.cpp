@@ -31,6 +31,8 @@ int main(int argc, char* argv[])
 {
 	struct timeval begin_tv, end_tv;
 	struct timezone tz;
+    string query = argv[1];
+    cout <<"start query search" <<endl;
 
 	static int nCnt = 0;
 	++nCnt;
@@ -59,7 +61,7 @@ int main(int argc, char* argv[])
 	
 	// current query & result page number
 	//LB_c: 设置搜索字符串到成员变量m_sQuery
-	iQuery.SetQuery();	
+	iQuery.SetQuery(query);	
 
 	//LB_c: 设置显示查询结果的第几页（因为搜索结果可能有很多页，但是一次只能显示一页）
 	// 用户提交的URL中有一个名为start的键值对指示显示第几页，如用户在结果页面中手动选
@@ -89,9 +91,10 @@ int main(int argc, char* argv[])
 	
 	//LB_c: 该函数进行中文分词，iDict字典对象。将原字符串中插入"/"进行分割，分割后的
 	// 字符串存入m_sSegQuery.
+    cout << "m_sQuery:" << iQuery.m_sQuery.c_str() << endl;
 	iQuery.m_sSegQuery = iHzSeg.SegmentSentenceMM(iDict,iQuery.m_sQuery); 
 	string strSegRes = iQuery.m_sSegQuery;
-	
+	cout << "strSegRes:"<<iQuery.m_sSegQuery << endl;
 	//LB_c: 存放分割后的独立的关键词
 	vector<string> vecTerm; 
 	//LB_c: 从分割后的串m_sSegQuery中获取独立的关键词一一存入vector中
@@ -107,6 +110,7 @@ int main(int argc, char* argv[])
 	// 检索verTerm中的所有独立关键词，然后进行简单的结果排序。实际上结果排序非常重要，
 	// 要达到很好的效果算法也非常复杂，TSE系统中只是简单的实现了结果排序，所以与关键词
 	// 检索在一个函数里实现。
+    cout << "iQuery.GetRelevantRst" << endl;
 	iQuery.GetRelevantRst(vecTerm, mapBuckets, setRelevantRst); 
 	//=========================== LB_c: 检索关键词+结果排序 ========================== 
 	
@@ -118,10 +122,10 @@ int main(int argc, char* argv[])
 	//============================== LB_C: 显示搜索结果 ============================== 
 	//LB_c: 结果显示类，类中主要有ShowTop,ShowMiddle和ShowBelow三个接口，用标准输出
 	// html语句的方式显示结果页面。
-	CDisplayRst iDisplayRst; 
+	//CDisplayRst iDisplayRst; 
 	
 	//LB_c: 显示结果页面的头部
-	iDisplayRst.ShowTop(); 
+//	iDisplayRst.ShowTop(); 
 
 	//LB_c: 计算搜索过程耗费的时间
 	float used_msec = (end_tv.tv_sec-begin_tv.tv_sec)*1000 
@@ -129,14 +133,22 @@ int main(int argc, char* argv[])
 	
 	//LB_c: 显示结果页面的中部，主要是一些结果信息：用户的查询串、耗时、找到的结果页面
 	// 总数和分页显示的分页链接等。
-	iDisplayRst.ShowMiddle(iQuery.m_sQuery,used_msec, 
-			setRelevantRst.size(), iQuery.m_iStart);
+    cout << "iQuery.m_sQuery:"<< iQuery.m_sQuery << endl;
+    cout << "used_msec:" << used_msec << endl;
+    cout << "setRelevantRst.size:"<< setRelevantRst.size() << endl;
+    cout << "iQuery.m_iStart:"<< iQuery.m_iStart<< endl;
+    set<string>::iterator iter = setRelevantRst.begin();
+    for(; iter != setRelevantRst.end(); iter++) {
+        cout << "docid:"<< *iter << endl;
+    }
+//	iDisplayRst.ShowMiddle(iQuery.m_sQuery,used_msec, 
+//			setRelevantRst.size(), iQuery.m_iStart);
 
 	//LB_c: 显示结果页面的底部，就是搜索的结果，以列表的形式列出。主要包括网页的URL，
 	// 网页大小，网页内容的摘要和网页快照的链接等。
 	//cout << "<p>iQuery.m_iStart : " << iQuery.m_iStart << "</p>\n";
 	//cout << "<p>iQuery.m_sSegQuery : " << strSegRes << "</p>\n";
-	iDisplayRst.ShowBelow(vecTerm,setRelevantRst,vecDocIdx, iQuery.m_iStart); 
+//	iDisplayRst.ShowBelow(vecTerm,setRelevantRst,vecDocIdx, iQuery.m_iStart); 
 	//============================== LB_C: 显示搜索结果 ============================== 
 
 

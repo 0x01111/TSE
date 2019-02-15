@@ -49,6 +49,7 @@ public:
 	bool RecordQueryLog() const;
 
 	void SetQuery();
+	void SetQuery(string & q);
 	void SetStart();
 
 };

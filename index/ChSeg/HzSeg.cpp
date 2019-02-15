@@ -20,6 +20,7 @@ CHzSeg::~CHzSeg()
 string CHzSeg::SegmentHzStrMM (CDict &dict, string s1) const
 {
 	string s2="";				// store segment result
+    cout<<"s1:"<<s1<< endl;
 	while (!s1.empty()) { 
 		unsigned int len=s1.size();
 		//LB_c: MAX_WORD_LENGHT为设置的最大词长，TSE中设置为8个字节，即4个汉字
@@ -64,7 +65,6 @@ string CHzSeg::SegmentSentenceMM (CDict &dict, string s1) const
 
 		//LB_c: 取s1的第一个字节，注意这里ch的类型限定符为unsigned，因为汉字的每个字节的值大于128
 		unsigned char ch=(unsigned char) s1[0];
-
 		//LB_c: ch<128说明ch是一个ASCII字符，这部分过滤ASCII字符
 		if(ch<128) { // deal with ASCII
 			i=1;
@@ -99,7 +99,7 @@ string CHzSeg::SegmentSentenceMM (CDict &dict, string s1) const
 		//LB_c: else中ch为非ASCII字符，即中文GBK字符。
 		//LB_c: 这里完全可以写成else if (ch < 176)，费解！
 		} else { 
-			
+		cout << "gbs"<< endl;	
 			//LB_c: ch<176说明是中文标点或其他中文符号，GBK汉字是从176往上开始编码的，也就是所有的首字节都是大于176。大
 			// 家可以查GBK的编码表。所以这部分是处理中文标点和中文特殊符号的。
 			if (ch<176) { 
